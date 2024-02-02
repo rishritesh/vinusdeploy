@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editors in Linux Quiz</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+      .correct {
+            color: green;
+        }
+
+        .wrong {
+            color: red;}
+    body {
+        background-color: #9bc6f0;
+        padding: 50px;
+    }
+
+    .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+    }
+
+    h1 {
+        color: #88bef5;
+        font-weight: bolder;
+        padding: 20px;
+        text-align: center;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    
+    }
+    p{
+        font-weight: bold;
+    }
+
+    input[type="radio"] {
+        margin-bottom: 20px;
+    }
+
+    button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #resultMessage {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+    <body>
+
+        <div class="container">
+            <h1 class="text-center">Managing Local Linux Users and Groups</h1>
+    
+        <section class="question" id="question1">
+            <p>Question 1: How do you create a new user in Linux?</p>
+            <label><input type="radio" name="q1" value="createuser username"> createuser username</label>
+            <label><input type="radio" name="q1" value="adduser username"> adduser username</label>
+            <label><input type="radio" name="q1" value="newuser username"> newuser username</label>
+            <label><input type="radio" name="q1" value="useradd username"> useradd username</label>
+        </section>
+    
+        <section class="question" id="question2">
+            <p>Question 2: What command is used to delete a user along with their home directory in Linux?</p>
+            <label><input type="radio" name="q2" value="removeuser username"> removeuser username</label>
+            <label><input type="radio" name="q2" value="deluser --remove-home username"> deluser --remove-home username</label>
+            <label><input type="radio" name="q2" value="deleteuser username"> deleteuser username</label>
+            <label><input type="radio" name="q2" value="userdel -r username"> userdel -r username</label>
+        </section>
+    
+        <section class="question" id="question3">
+            <p>Question 3: How can you change the password for a specific user in Linux?</p>
+            <label><input type="radio" name="q3" value="setpasswd username"> setpasswd username</label>
+            <label><input type="radio" name="q3" value="passwdchange username"> passwdchange username</label>
+            <label><input type="radio" name="q3" value="changepass username"> changepass username</label>
+            <label><input type="radio" name="q3" value="passwd username"> passwd username</label>
+        </section>
+    
+        <section class="question" id="question4">
+            <p>Question 4: Which command allows you to modify user details in Linux?</p>
+            <label><input type="radio" name="q4" value="edituser"> edituser</label>
+            <label><input type="radio" name="q4" value="modifyuser"> modifyuser</label>
+            <label><input type="radio" name="q4" value="usermodify"> usermodify</label>
+            <label><input type="radio" name="q4" value="usermod"> usermod</label>
+        </section>
+    
+        <section class="question" id="question5">
+            <p>Question 5: How do you create a new group in Linux?</p>
+            <label><input type="radio" name="q5" value="addgroup groupname"> addgroup groupname</label>
+            <label><input type="radio" name="q5" value="groupadd groupname"> groupadd groupname</label>
+            <label><input type="radio" name="q5" value="newgroup groupname"> newgroup groupname</label>
+            <label><input type="radio" name="q5" value="creategroup groupname"> creategroup groupname</label>
+        </section>
+    
+        <section class="question" id="question6">
+            <p>Question 6: What command is used to add a user to a specific group in Linux?</p>
+            <label><input type="radio" name="q6" value="addusergroup username groupname"> addusergroup username groupname</label>
+            <label><input type="radio" name="q6" value="useradd -g groupname username"> useradd -g groupname username</label>
+            <label><input type="radio" name="q6" value="addgroup username groupname"> addgroup username groupname</label>
+            <label><input type="radio" name="q6" value="usermod -aG groupname username"> usermod -aG groupname username</label>
+        </section>
+    
+        <section class="question" id="question7">
+            <p>Question 7: How can you list all users on a Linux system?</p>
+            <label><input type="radio" name="q7" value="cat /etc/passwd"> cat /etc/passwd</label>
+            <label><input type="radio" name="q7" value="listusers"> listusers</label>
+            <label><input type="radio" name="q7" value="getent passwd"> getent passwd</label>
+            <label><input type="radio" name="q7" value="ls /home"> ls /home</label>
+        </section>
+    
+        <section class="question" id="question8">
+            <p>Question 8:  To display information about a specific user, including their groups, which command would you use?</p>
+            <label><input type="radio" name="q8" value="whoami"> whoami</label>
+            <label><input type="radio" name="q8" value="id username"> id username</label>
+            <label><input type="radio" name="q8" value="userinfo username"> userinfo username</label>
+            <label><input type="radio" name="q8" value="usergroups username"> usergroups username</label>
+        </section>
+    
+        <section class="question" id="question9">
+            <p>Question 9:  What is the purpose of the /etc/group file in Linux?</p>
+            <label><input type="radio" name="q9" value="Stores user account information"> Stores user account information</label>
+            <label><input type="radio" name="q9" value="Stores group account information"> Stores group account information</label>
+            <label><input type="radio" name="q9" value="Manages user password policie"> Manages user password policie</label>
+            <label><input type="radio" name="q9" value="Manages system-wide environmental variables"> Manages system-wide environmental variables</label>
+        </section>
+    
+        <section class="question" id="question10">
+            <p>Question 10:  How do you grant sudo privileges to a user in Linux?</p>
+            <label><input type="radio" name="q10" value="addsudo username"> addsudo username</label>
+            <label><input type="radio" name="q10" value="usermod -aG sudo username">  usermod -aG sudo username</label>
+            <label><input type="radio" name="q10" value="sudoeradd username"> sudoeradd username</label>
+            <label><input type="radio" name="q10" value="grantprivileges username sudo"> grantprivileges username sudo</label>
+        </section>
+    
+    
+        
+        <button id="submitBtn">Submit</button>
+        <div id="result"></div>
+<script>
+    document.getElementById('submitBtn').addEventListener('click', checkAnswers);
+
+
+function checkAnswers() {
+ var marks = 0;
+ marks += checkQuestion('question1', 'useradd username');
+ marks += checkQuestion('question2', 'userdel -r username');
+ marks += checkQuestion('question3', 'passwd username');
+ marks += checkQuestion('question4', 'usermod');
+ marks += checkQuestion('question5', 'groupadd groupname');
+ marks += checkQuestion('question6', "usermod -aG groupname username");
+ marks += checkQuestion('question7', 'cat /etc/passwd');
+ marks += checkQuestion('question8', 'id username');
+ marks += checkQuestion('question9', 'Stores group account information');
+ marks += checkQuestion('question10', 'usermod -aG sudo username');
+
+ document.getElementById('result').innerText = `You got ${marks} marks out of 10`;
+}
+
+function checkQuestion(questionId, correctAnswer) {
+ var selectedAnswer = document.querySelector(`#${questionId} input:checked`);
+ var options = document.querySelectorAll(`#${questionId} input`);
+
+ options.forEach(function(option) {
+     option.parentElement.classList.remove('correct', 'wrong');
+
+     if (option.value === correctAnswer) {
+         option.parentElement.classList.add('correct');
+     }
+
+     if (option.checked && option.value !== correctAnswer) {
+         option.parentElement.classList.add('wrong');
+     }
+ });
+
+ return selectedAnswer && selectedAnswer.value === correctAnswer ? 1 : 0;
+}
+</script>
+
+
+</body>
+</html>

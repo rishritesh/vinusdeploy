@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editors in Linux Quiz</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+      .correct {
+            color: green;
+        }
+
+        .wrong {
+            color: red;}
+    body {
+        background-color: #9bc6f0;
+        padding: 50px;
+    }
+
+    .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+    }
+
+    h1 {
+        color: #88bef5;
+        font-weight: bolder;
+        padding: 20px;
+        text-align: center;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    
+    }
+    p{
+        font-weight: bold;
+    }
+
+    input[type="radio"] {
+        margin-bottom: 20px;
+    }
+
+    button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #resultMessage {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+    <body>
+
+        <div class="container">
+            <h1 class="text-center">File and directory management</h1>
+    
+        <section class="question" id="question1">
+            <p>Question 1: What command is used to create a new directory in Linux?</p>
+            <label><input type="radio" name="q1" value="mkdir"> mkdir</label>
+            <label><input type="radio" name="q1" value="touch"> touch</label>
+            <label><input type="radio" name="q1" value="newdir"> newdir</label>
+            <label><input type="radio" name="q1" value="makedir"> makedir</label>
+        </section>
+    
+        <section class="question" id="question2">
+            <p>Question 2: How can you list all files, including hidden ones, in a directory using the command line in Linux?</p>
+            <label><input type="radio" name="q2" value="ls"> ls</label>
+            <label><input type="radio" name="q2" value="ls -l"> ls -l</label>
+            <label><input type="radio" name="q2" value="ls -la"> ls -la</label>
+            <label><input type="radio" name="q2" value="ls -h"> ls -h</label>
+        </section>
+    
+        <section class="question" id="question3">
+            <p>Question 3: In Linux, what command is used to change the current working directory?</p>
+            <label><input type="radio" name="q3" value="cd"> cd</label>
+            <label><input type="radio" name="q3" value="chdir"> chdir</label>
+            <label><input type="radio" name="q3" value="changedir"> changedir</label>
+            <label><input type="radio" name="q3" value="currentdir"> currentdir</label>
+        </section>
+    
+        <section class="question" id="question4">
+            <p>Question 4: How do you remove a directory and its contents recursively in Linux?</p>
+            <label><input type="radio" name="q4" value="rm -r"> rm -r</label>
+            <label><input type="radio" name="q4" value="rmdir"> rmdir</label>
+            <label><input type="radio" name="q4" value="remove -r"> remove -r</label>
+            <label><input type="radio" name="q4" value="delete -r"> delete -r</label>
+        </section>
+    
+        <section class="question" id="question5">
+            <p>Question 5: Which command is used to copy files and directories in Linux?</p>
+            <label><input type="radio" name="q5" value="cp"> cp</label>
+            <label><input type="radio" name="q5" value="mv"> mv</label>
+            <label><input type="radio" name="q5" value="copy"> copy</label>
+            <label><input type="radio" name="q5" value="duplicate"> duplicate</label>
+        </section>
+    
+        <section class="question" id="question6">
+            <p>Question 6: In Linux, what command is used to display the disk space usage of a file or directory?</p>
+            <label><input type="radio" name="q6" value="df"> df</label>
+            <label><input type="radio" name="q6" value="space"> space</label>
+            <label><input type="radio" name="q6" value="du"> du</label>
+            <label><input type="radio" name="q6" value="diskspace"> diskspace</label>
+        </section>
+    
+        <section class="question" id="question7">
+            <p>Question 7: How do you rename a file in Linux using the command line? </p>
+            <label><input type="radio" name="q7" value="mv"> mv</label>
+            <label><input type="radio" name="q7" value="rename"> rename</label>
+            <label><input type="radio" name="q7" value="cp"> cp</label>
+            <label><input type="radio" name="q7" value="ren"> ren</label>
+        </section>
+    
+        <section class="question" id="question8">
+            <p>Question 8: Which command is used to find files in Linux based on their name or attributes?</p>
+            <label><input type="radio" name="q8" value="find"> find</label>
+            <label><input type="radio" name="q8" value="search"> search</label>
+            <label><input type="radio" name="q8" value="locate"> locate</label>
+            <label><input type="radio" name="q8" value="grep"> grep</label>
+        </section>
+    
+        <section class="question" id="question9">
+            <p>Question 9: What does the 'chmod' command do in Linux?</p>
+            <label><input type="radio" name="q9" value="Change file permissions"> Change file permissions</label>
+            <label><input type="radio" name="q9" value="Change the modification time of a file"> Change the modification time of a file</label>
+            <label><input type="radio" name="q9" value="Change the ownership of a file"> Change the ownership of a file</label>
+            <label><input type="radio" name="q9" value="Check disk space"> Check disk space</label>
+        </section>
+    
+        <section class="question" id="question10">
+            <p>Question 10: In Linux, what command is used to create an empty file or update the timestamp of an existing file?</p>
+            <label><input type="radio" name="q10" value="touch"> touch</label>
+            <label><input type="radio" name="q10" value="create">  create</label>
+            <label><input type="radio" name="q10" value="empty"> empty</label>
+            <label><input type="radio" name="q10" value="update"> update</label>
+        </section>
+    
+    
+        
+        <button id="submitBtn">Submit</button>
+        <div id="result"></div>
+<script>
+    document.getElementById('submitBtn').addEventListener('click', checkAnswers);
+
+
+function checkAnswers() {
+ var marks = 0;
+ marks += checkQuestion('question1', 'mkdir');
+ marks += checkQuestion('question2', 'ls -l');
+ marks += checkQuestion('question3', 'cd');
+ marks += checkQuestion('question4', 'rm -r');
+ marks += checkQuestion('question5', 'cp');
+ marks += checkQuestion('question6', 'du');
+ marks += checkQuestion('question7', 'mv');
+ marks += checkQuestion('question8', 'find');
+ marks += checkQuestion('question9', 'Change file permissions');
+ marks += checkQuestion('question10', 'touch');
+ document.getElementById('result').innerText = `You got ${marks} marks out of 10`;
+}
+
+function checkQuestion(questionId, correctAnswer) {
+ var selectedAnswer = document.querySelector(`#${questionId} input:checked`);
+ var options = document.querySelectorAll(`#${questionId} input`);
+
+ options.forEach(function(option) {
+     option.parentElement.classList.remove('correct', 'wrong');
+
+     if (option.value === correctAnswer) {
+         option.parentElement.classList.add('correct');
+     }
+
+     if (option.checked && option.value !== correctAnswer) {
+         option.parentElement.classList.add('wrong');
+     }
+ });
+
+ return selectedAnswer && selectedAnswer.value === correctAnswer ? 1 : 0;
+}
+</script>
+
+
+</body>
+</html>

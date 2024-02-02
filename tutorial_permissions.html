@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permissions and Ownership</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #9bc6f0;
+            padding: 40px;
+            color: #64686c;
+        }
+        .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+    }
+        h1, h2, h3 {
+            font-weight: bold;
+            padding-top: 40px;
+            align-self: center;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: #131415; /* Blue color */
+            padding-top: 20px;
+            text-align: center;
+        
+        }
+
+        h2 {
+            font-size: 25px;
+            color: #0b0b0b;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: #3d3535;
+        }
+
+        p {
+            color: #2468a4;
+            font-size: 18px;
+        }
+
+        pre {
+            background-color: #abbfd6;
+            border-radius: 20px;
+            overflow-x: auto;
+            font-size: 15px;
+        }
+
+        code {
+            color: #d63384;
+           
+        }
+
+        #datetime {
+            font-size: 14px;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+<h1>Permissions and ownership</h1>
+<p>The <code>ls</code> command along with its <code>-l</code> (for long listing) option will show you metadata about your Linux files, including the permissions set on the file.
+</p>
+<pre><code>$ ls -l
+    rwxr-xr-x. 4 root root    68 Jun 13 20:25 tuned
+    -rw-r--r--. 1 root root  4017 Feb 24  2022 vimrc </code></pre>
+    <p>In the context of a computer operating system, permissions refer to the rules or settings that determine who can access, modify, or execute files and directories. Permissions are a crucial aspect of system security, helping to control and restrict access to sensitive information or system resources. In Linux and Unix-like operating systems, including macOS, permissions are associated with users, groups, and others.    </p>
+<p>Here are the key concepts related to permissions:</p>
+<h3>a). Users:</h3>
+<p><strong>1. Owner (User):</strong> The user who owns the file or directory. The owner has specific permissions.</p>
+<p><strong>2. Group:</strong> A collection of users who share common permissions on files or directories.</p>
+<h3>Permission Types:</h3>
+<p><strong>1. Read (r):</strong> Allows the reading of file contents or listing directory contents. </p>
+
+ <p> <strong>2. Write (w):</strong> Allows the modification of file contents or the creation, deletion, and renaming of files within a directory.</p>  
+    
+  <p> <strong>3. Execute (x):</strong> Allows the execution of files or the traversal of directories.</p>  
+   <h3>b). Permission Levels:</h3>
+<p><strong>1. Owner Permissions:</strong>Apply to the user who owns the file or directory.</p>
+<p><strong>2. Group Permissions:</strong>Apply to the group associated with the file or directory.</p>
+<p><strong>3. Others Permissions:</strong>Apply to users who are neither the owner nor part of the group.</p>
+<h3>c). Permission Representation:</h3>
+<p>ssions are often represented using a 10-character string. 
+    The first character indicates the file type, and the next three sets of three characters represent the permissions for the owner, group, and others, respectively.   </p>
+<pre><code>-rwxr-xr–</code></pre>
+<p>In this example, the owner has read, write, and execute permissions; the group has read and execute permissions; and others have only read permissions.</p>
+<h3>d). Numeric Representation:</h3>
+<p>Permissions can also be represented using numeric values (octal representation). </p>
+<p>Each permission type is assigned a numeric value: read (4), write (2), and execute (1).</p>
+<p>The sum of these values represents the permission set.</p>
+<pre><code>-rwxr-xr--  (Symbolic representation)
+    764         (Numeric representation) </code></pre>
+<p>In this example, the numeric representation for the permissions is 764.</p>
+<h3>e).   Changing Permissions:
+</h3>
+<p>The chmod command is used to change permissions. For example:</p>
+<pre><code>chmod 755 filename</code></pre></pr>
+<p>This command sets read, write, and execute permissions for the owner, and read and execute permissions for the group and others.
+</p>
+<h2>Special Permissions</h2>
+<p>Special permissions in Linux refer to advanced settings that can be applied to files and directories, in addition to the standard read, write, and execute permissions. These special permissions include the setuid (SUID), setgid (SGID), and sticky bit. These permissions provide specific functionality and control over how programs run and how directories are accessed.
+</p>
+<p><h3>a). Setuid (SUID):</h3></p>
+<p>When the setuid permission is set on an executable file, the program will run with the effective user ID (UID) of the file owner rather than the user who executes the program.
+</p>
+<p>This is often used for programs that need elevated privileges temporarily. 
+
+    For example, the passwd command needs to update the password file, which regular users don't have direct access to. By setting the setuid bit on passwd, it runs with the elevated privileges required to update the password file.
+    </p>
+<p><strong>Example:</strong></p>
+<pre><code>chmod u+s /path/to/executable</code></pre>
+<p><h3>b). Setgid (SGID):
+</h3></p>
+<p>When the setgid permission is set on an executable file or a directory, the program or any new files and directories created within that directory will inherit the group ownership of the parent directory rather than the group of the user who created them.
+</p>
+<p>This is commonly used for shared directories where multiple users need access to the same files with a common group ownership.
+</p>
+<p><strong>Example:</strong></p>
+<pre><code> chmod g+s /path/to/executable</code></pre>
+<p><h3>c). Sticky Bit:</h3></p>
+<p>The sticky bit, when applied to a directory, restricts the ability to delete or rename files within that directory to the file owner, the directory owner, or the superuser.
+    It is often used on directories where multiple users have write access to prevent users from deleting each other's files.
+</p>
+<p><strong>Example:</strong></p>
+<pre><code> chmod +t /path/to/directory</code></pre>
+<p>The sticky bit is typically set on directories like /tmp, allowing any user to write to the directory but preventing them from deleting or modifying files created by other users.
+</p>
+
+
+
+<div id="datetime"></div>
+
+<script>
+    function updateDateTime() {
+        const now = new Date();
+        const options = {
+            timeZone: 'UTC',
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric'
+        };
+        const formattedDate = now.toLocaleDateString('en-US', options);
+        document.getElementById('datetime').textContent = formattedDate;
+    }
+
+    updateDateTime();
+    setInterval(updateDateTime, 1000); // Update every second
+</script>
+    </div>
+</body>
+
+</html>

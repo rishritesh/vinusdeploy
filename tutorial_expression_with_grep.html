@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expression with grep</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #9bc6f0;
+            padding: 40px;
+            color: #64686c;
+        }
+        .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+    }
+        h1, h2, h3 {
+            font-weight: bold;
+            padding-top: 40px;
+            align-self: center;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: #131415; 
+            padding-top: 20px;
+            padding-bottom: 20px;
+            text-align: center;
+        
+        }
+
+        h2 {
+            font-size: 25px;
+            color: #0b0b0b;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: #3d3535;
+        }
+
+        p {
+            color: #2468a4;
+            font-size: 18px;
+        }
+
+        pre {
+            background-color: #abbfd6;
+            border-radius: 20px;
+            overflow-x: auto;
+            font-size: 15px;
+        }
+
+        code {
+            color: #d63384;
+           
+        }
+
+        #datetime {
+            font-size: 14px;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Expressions with grep</h1>
+<h2><strong>Basic concepts</strong></h3>
+<h3><strong>1.1 What is a Regular Expression?</strong></h3>
+<p>A regular expression is a sequence of characters that forms a search pattern. It can be used for pattern matching within strings. grep uses regular expressions to search for and match text patterns within files.
+</p>
+<h3><strong>1.2 Metacharacters</strong></h3>
+<p>Metacharacters are special characters with a symbolic meaning in regular expressions. Some common metacharacters include . (period), * (asterisk), + (plus), ? (question mark), ^ (caret), and $ (dollar sign).
+</p>
+<h2>2. Using grep with Regular Expressions</h2>
+<h3><strong>2.1 Basic Syntax</strong></h3>
+<p>The basic syntax of using grep with regular expressions is:</p>
+<pre><code>grep 'pattern' filename</code></pre>
+<p>This command searches for the specified pattern in the given file.</p>
+<h3><strong>2.2 Options and Flags</strong></h3>
+<p><strong>-i :</strong>Perform case-insensitive matching.</p>
+<p><strong>-v :</strong>Invert the match; display non-matching lines.</p>
+<p><strong>-r :</strong>Recursively search directories.</p>
+<p><strong>-n :</strong>Display line numbers.</p>
+<p><strong>-c :</strong>Display only the count of matching lines.</p>
+<h2>3. Common Examples</h2>
+<h3><strong>3.1 Simple Pattern Matching</strong></h3>
+<pre><code>grep 'word' filename</code></pre>
+<p>This command searches for the exact word 'word' in the specified file.
+</p>
+<h3><strong>3.2 Character Classes</strong></h3>
+<pre><code>grep '[0-9]' filename</code></pre>
+<p>
+    Matches any digit in the specified file.</p>
+<h3><strong>3.3 Quantifiers</strong></h3>
+<pre><code>grep 'a*' filename</code></pre>
+<p>Matches zero or more occurrences of the letter 'a' in the specified file.
+</p>
+<h3><strong>3.4 Anchors</strong></h3>
+<pre><code>grep '^start' filename</code></pre>
+<p>Matches lines that start with the word 'start' in the specified file.
+</p>
+<h2>4. Additional Tips and Tricks
+</h2>
+<h3><strong>4.1 Case Insensitivity</strong></h3>
+<pre><code>grep -i 'pattern' filename
+</code></pre>
+<p>Performs a case-insensitive search for the specified pattern.
+</p>
+<h3><strong>
+    4.2 Inverting Matches</strong></h3>
+<pre><code>grep -v 'pattern' filename</code></pre>
+<p>Displays lines that do not match the specified pattern.</p>
+<h3><strong>4.3 Recursive Searching</strong></h3>
+<pre><code>grep -r 'pattern' directory</code></pre>
+<p>Recursively searches for the specified pattern in all files within the specified directory.
+</p>
+<p>This documentation provides a comprehensive guide to using regular expressions with the grep command. Experiment with these examples to become proficient in crafting powerful patterns for text search and manipulation.
+</p>
+    <div id="datetime"></div>
+
+<script>
+    function updateDateTime() {
+        const now = new Date();
+        const options = {
+            timeZone: 'UTC',
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric'
+        };
+        const formattedDate = now.toLocaleDateString('en-US', options);
+        document.getElementById('datetime').textContent = formattedDate;
+    }
+
+    updateDateTime();
+    setInterval(updateDateTime, 1000); 
+</script>
+<div>
+</body>
+
+</html>

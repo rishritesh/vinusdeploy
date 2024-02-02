@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File management</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #9bc6f0;
+            padding: 40px;
+            color: #64686c;
+        }
+        .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+    }
+
+        h1, h2, h3 {
+            font-weight: bold;
+            padding-top: 40px;
+            align-self: center;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: #131415; /* Blue color */
+            padding-top: 20px;
+            padding-bottom: 20px;
+            text-align: center;
+        
+        }
+
+        h2 {
+            font-size: 25px;
+            color: #0b0b0b;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: #3d3535;
+        }
+
+        p {
+            color: #2468a4;
+            font-size: 18px;
+        }
+
+        pre {
+            background-color: #abbfd6;
+            border-radius: 20px;
+            overflow-x: auto;
+            font-size: 15px;
+        }
+
+        code {
+            color: #d63384;
+           
+        }
+
+        #datetime {
+            font-size: 14px;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+<h1>File and Directory Management</h1>
+<p>In Linux, most of the operations are performed on files. And to handle these files Linux has directories also known as folders which are maintained in a tree-like structure.</p>
+<p> Though, these directories are also a type of file themselves.</p><p> Linux has 3 types of files:
+</p>
+<h3>a). Regular Files</h3>
+<p>It is the common file type in Linux. it includes files like – text files, images, binary files, etc. Such files can be created using the touch command. They consist of the majority of files in the Linux/UNIX system. The regular file contains ASCII or Human Readable text, executable program binaries, program data and much more.
+</p>
+<h3>b). Directories</h3>
+<p>Windows call these directories as folders. These are the files that store the list of file names and the related information. The root directory(/) is the base of the system, /home/ is the default location for user’s home directories, /bin for Essential User Binaries, /boot – Static Boot Files, etc. We could create new directories with mkdir command.
+</p>
+<h3>c). Special Files</h3>
+<p>Represents a real physical device such as a printer which is used for IO operations. Device or special files are used for device Input/Output(I/O) on UNIX and Linux systems. You can see them in a file system like an ordinary directory or file.
+</p>
+<h2>How to Display File Content in Linux</h2>
+<p>First, you need to know the files in the directory you are currently in. To list the files in your current directory, use the ls command:
+</p>
+<pre>
+        <code>
+            $ ls
+        </code>
+    </pre>
+    <p>To display the contents of a given file to your terminal window, you can use the cat command, followed by the file name. For example: </p>
+<pre>
+    <code>$ cat filename1 </code>
+</pre>
+<h2>Copying File Content in Linux Directories</h2>
+<pre><code>$ cp [source] [destination]</code></pre></pe>
+<p>The source indicates the filename of the file to be copied. In case you are working from a directory different from the file, you can instead indicate its file path. The destination is the directory to which you would like to save the copied file:
+</p>
+<pre>
+    <code>$ cp filename1 /home/joel/
+    </code>
+</pre>
+<h2>Moving and Deleting Files in Linux Directories
+</h2><p>Moving a file refers to shifting it to a different directory. This is different from copying a file, since the original file is removed from its initial directory. To move a file, use the mv command, followed by the filename name and its destination directory:
+</p>
+<pre><code>$ mv filenameX /tmp</code></pre>
+<p>It’s interesting to note that the mv command can be used to rename a file. The example below renames file3 to file4:
+</p><pre><code>$ mv file3 file4</code></pre>
+<p><strong>To delete a file</strong>, use the rm command, followed by the filename. You may need administrative privileges. If prompted to do so, prefix the rm command with sudo.</p>
+<pre><code>$ rm filename2
+</code></pre>
+<h2>Directory Management in Linux</h2>
+<p>As mentioned earlier, files are stored in directories. In most operating systems, a directory is commonly referred to as a folder. 
+</p>
+<p>To create a directory, type the mkdir command followed by the directory name and run the command:
+</p>
+<pre><code>$ mkdir folder1</code></pre>
+<p>You may want to know your present working directory. Simply run the pwd command in you terminal to do so:</p>
+<pre><code>$ pwd</code></pre>
+<p>To list the contents in your current directory, run the ls command.</p>
+<pre><code>$ ls</code></pre>
+<p>To change your current directory, use the cd command followed by the directory you would like to change to.</p>
+<pre><code>$ cd /filename/ </code></pre>
+<p>In case you want to delete a directory, use the rmdir command followed by the directory name.</p>
+<pre><code>$ rmdir /tmp/folder1 </code></pre>
+<p>If the directory you are deleting has sub-directories, your system will flag an error when you run rmdir. To recursively delete folders, add the <strong>-r</strong> option.
+</p>
+<p>    You may also want to move a folder into another folder. Use the syntax below to achieve this:  </p>
+<pre><code>$ mv folder1/ folder2/ </code></pre>
+<p>If you want to copy all the file contents in a folder, you will still use the cp command, though, you will need to add the -R option:</p>
+<pre><code>$ cp -R  folder1/ folder2/</code></pre>
+<h2>Summary of File Management in Linux
+</h2>
+<p>Directories are used for organizing files in your Linux system. When creating your own directories and subdirectories, it is only fair that your arrangement is logical while doing so (since directories are meant to help you organize files and other directories). Keep this in mind when tackling the task of managing your files in Linux.
+</p>
+<div id="datetime"></div>
+
+<script>
+    function updateDateTime() {
+        const now = new Date();
+        const options = {
+            timeZone: 'UTC',
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric'
+        };
+        const formattedDate = now.toLocaleDateString('en-US', options);
+        document.getElementById('datetime').textContent = formattedDate;
+    }
+
+    updateDateTime();
+    setInterval(updateDateTime, 1000); // Update every second
+</script>
+</div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

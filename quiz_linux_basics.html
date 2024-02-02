@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editors in Linux Quiz</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+      .correct {
+            color: green;
+        }
+
+        .wrong {
+            color: red;}
+    body {
+        background-color: #9bc6f0;
+        padding: 50px;
+    }
+
+    .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+    }
+
+    h1 {
+        color: #88bef5;
+        font-weight: bolder;
+        padding: 20px;
+        text-align: center;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    
+    }
+    p{
+        font-weight: bold;
+    }
+
+    input[type="radio"] {
+        margin-bottom: 20px;
+    }
+
+    button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #resultMessage {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+    <body>
+
+        <div class="container">
+            <h1 class="text-center">Linux Basic commands</h1>
+    
+        <section class="question" id="question1">
+            <p>Question 1: Which option of "ls" will show the hidden files</p>
+            <label><input type="radio" name="q1" value="-h"> -h</label>
+            <label><input type="radio" name="q1" value="-a"> -a</label>
+            <label><input type="radio" name="q1" value="-l"> -l</label>
+            <label><input type="radio" name="q1" value="-i"> -i</label>
+        </section>
+    
+        <section class="question" id="question2">
+            <p>Question 2: How do you navigate to the home directory using the command line?</p>
+            <label><input type="radio" name="q2" value="cd home"> cd home</label>
+            <label><input type="radio" name="q2" value="cd ~"> cd ~</label>
+            <label><input type="radio" name="q2" value="cd /home"> cd /home</label>
+            <label><input type="radio" name="q2" value="cd home-directory"> cd home-directory</label>
+        </section>
+    
+        <section class="question" id="question3">
+            <p>Question 3: What is the purpose of the 'pwd' command?</p>
+            <label><input type="radio" name="q3" value="Print working directory"> Print working directory</label>
+            <label><input type="radio" name="q3" value="List files in a directory"> List files in a directory</label>
+            <label><input type="radio" name="q3" value="Change the working directory"> Change the working directory</label>
+            <label><input type="radio" name="q3" value="Remove a directory"> Remove a directory</label>
+        </section>
+    
+        <section class="question" id="question4">
+            <p>Question 4: How can you display the manual page for a command?</p>
+            <label><input type="radio" name="q4" value="man"> man</label>
+            <label><input type="radio" name="q4" value="help"> help</label>
+            <label><input type="radio" name="q4" value="info"> info</label>
+            <label><input type="radio" name="q4" value="command --help"> command --help</label>
+        </section>
+    
+        <section class="question" id="question5">
+            <p>Question 5: Which of following will show the first 5 lines of the input file?</p>
+            <label><input type="radio" name="q5" value="less -5 file"> less -5 file</label>
+            <label><input type="radio" name="q5" value="head -5 file"> head -5 file</label>
+            <label><input type="radio" name="q5" value="more -5 file"> more -5 file</label>
+            <label><input type="radio" name="q5" value="show -5 file"> show -5 file</label>
+        </section>
+    
+        <section class="question" id="question6">
+            <p>Question 6: How do you list files and directories in a long format (detailed information)?</p>
+            <label><input type="radio" name="q6" value="ls -a"> ls -a</label>
+            <label><input type="radio" name="q6" value="ls -l"> ls -l</label>
+            <label><input type="radio" name="q6" value="ls -d"> ls -d</label>
+            <label><input type="radio" name="q6" value="ls -h"> ls -h</label>
+        </section>
+    
+        <section class="question" id="question7">
+            <p>Question 7: Which command can be used to view the content of a file in reverse i.e from last line to first?</p>
+            <label><input type="radio" name="q7" value="cat -r"> cat -r</label>
+            <label><input type="radio" name="q7" value="rev"> rev</label>
+            <label><input type="radio" name="q7" value="tac"> tac</label>
+            <label><input type="radio" name="q7" value="less"> less</label>
+        </section>
+    
+        <section class="question" id="question8">
+            <p>Question 8: The command "cat -n file" will </p>
+            <label><input type="radio" name="q8" value="Add a new line after every line of the output"> Add a new line after every line of the output</label>
+            <label><input type="radio" name="q8" value="Add line numbers to every line of the output"> Add line numbers to every line of the output</label>
+            <label><input type="radio" name="q8" value="Will show only a count of the number of lines in the file"> Will show only a count of the number of lines in the file</label>
+            <label><input type="radio" name="q8" value="Will not print anything"> Will not print anything</label>
+        </section>
+    
+        <section class="question" id="question9">
+            <p>Question 9: The command "echo -n hello" will</p>
+            <label><input type="radio" name="q9" value="Print 'hello' and add a new line after it"> Print 'hello' and add a new line after it</label>
+            <label><input type="radio" name="q9" value="Not print anything"> Not print anything</label>
+            <label><input type="radio" name="q9" value="Print 'hello' and not add a new line after it"> Print 'hello' and not add a new line after it</label>
+            <label><input type="radio" name="q9" value="Change the case and print HELLO"> Change the case and print HELLO</label>
+        </section>
+    
+        <section class="question" id="question10">
+            <p>Question 10: How do you find files in a directory based on their name?</p>
+            <label><input type="radio" name="q10" value="find"> find</label>
+            <label><input type="radio" name="q10" value="search">  search</label>
+            <label><input type="radio" name="q10" value="locate"> locate</label>
+            <label><input type="radio" name="q10" value="query"> query</label>
+        </section>
+    
+    
+        
+        <button id="submitBtn">Submit</button>
+        <div id="result"></div>
+<script>
+    document.getElementById('submitBtn').addEventListener('click', checkAnswers);
+
+
+function checkAnswers() {
+ var marks = 0;
+ marks += checkQuestion('question1', '-a');
+ marks += checkQuestion('question2', 'cd ~');
+ marks += checkQuestion('question3', "Print working directory");
+ marks += checkQuestion('question4', 'man');
+ marks += checkQuestion('question5', 'head -5 file');
+ marks += checkQuestion('question6', "ls -l");
+ marks += checkQuestion('question7', 'tac');
+ marks += checkQuestion('question8', 'Add line numbers to every line of the output');
+ marks += checkQuestion('question9', "Print 'hello' and add a new line after it");
+ marks += checkQuestion('question10', 'find');
+ document.getElementById('result').innerText = `You got ${marks} marks out of 10`;
+}
+
+function checkQuestion(questionId, correctAnswer) {
+ var selectedAnswer = document.querySelector(`#${questionId} input:checked`);
+ var options = document.querySelectorAll(`#${questionId} input`);
+
+ options.forEach(function(option) {
+     option.parentElement.classList.remove('correct', 'wrong');
+
+     if (option.value === correctAnswer) {
+         option.parentElement.classList.add('correct');
+     }
+
+     if (option.checked && option.value !== correctAnswer) {
+         option.parentElement.classList.add('wrong');
+     }
+ });
+
+ return selectedAnswer && selectedAnswer.value === correctAnswer ? 1 : 0;
+}
+</script>
+
+
+</body>
+</html>

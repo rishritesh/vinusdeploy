@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Learning Platform</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* background-color: #c0d6ec; */
+            background-image: url('https://www.simplilearn.com/ice9/free_resources_article_thumb/Beginners_Guide_to_Linux_Programming.jpg');
+            text-align: center;
+            padding: 80px;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        h1 {
+            color: #ffffff;
+         
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+            font-size: 65px;
+        }
+
+        .content-links {
+            margin-top: 30px;
+        }
+
+        a {
+            display: inline-block;
+            margin: 75px;
+            padding: 25px 35px;
+            font-size: 47px;
+            font-weight: bold;
+
+            text-decoration: solid;
+            background-color: #000000;
+            color: #ffffff;
+            border-radius: 20px;
+        }
+
+        a:hover {
+            background-color: #9bc6f0;
+        }
+
+        #datetime {
+            font-size: 14px;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            color: #fafafa;
+        }
+    </style>    
+</head>
+<body>
+                                                                                                       
+<h1>Welcome to the Linux Learning Platform</h1>
+
+<div class="content-links">
+    <a href="tutorials.html">Tutorials</a>
+    <a href="quizzes.html">Quizzes</a>
+</div>
+
+<div id="datetime"></div>
+
+<script>
+    function updateDateTime() {
+        const now = new Date();
+        const options = { timeZone: 'Asia/Kolkata', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+        const formattedDate = now.toLocaleDateString('en-IN', options);
+        document.getElementById('datetime').textContent = formattedDate;
+    }
+
+    updateDateTime();
+    setInterval(updateDateTime, 1000); // Update every second
+</script>
+
+</body>
+</html>

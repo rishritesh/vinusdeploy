@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editors in Linux Quiz</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+      .correct {
+            color: green;
+        }
+
+        .wrong {
+            color: red;}
+    body {
+        background-color: #9bc6f0;
+        padding: 50px;
+    }
+
+    .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+    }
+
+    h1 {
+        color: #88bef5;
+        font-weight: bolder;
+        padding: 20px;
+        text-align: center;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    
+    }
+    p{
+        font-weight: bold;
+    }
+
+    input[type="radio"] {
+        margin-bottom: 20px;
+    }
+
+    button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #resultMessage {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+    <body>
+
+        <div class="container">
+            <h1 class="text-center">Editors in Linux</h1>
+    
+        <section class="question" id="question1">
+            <p>Question 1: Which text editor is commonly found on most Unix/Linux systems and is known for its simplicity and ease of use?</p>
+            <label><input type="radio" name="q1" value="vim"> vim</label>
+            <label><input type="radio" name="q1" value="emacs"> emacs</label>
+            <label><input type="radio" name="q1" value="nano"> Nano</label>
+            <label><input type="radio" name="q1" value="gedit"> gedit</label>
+        </section>
+    
+        <section class="question" id="question2">
+            <p>Question 2: In the Vim text editor, what mode is used for navigation and manipulation of text?</p>
+            <label><input type="radio" name="q2" value="Command mode"> Command mode</label>
+            <label><input type="radio" name="q2" value="Insert mode"> Insert mode</label>
+            <label><input type="radio" name="q2" value="Visual mode"> Visual mode</label>
+            <label><input type="radio" name="q2" value="Edit mode"> Edit mode</label>
+        </section>
+    
+        <section class="question" id="question3">
+            <p>Question 3: Which text editor provides a graphical user interface and is commonly used in desktop environments like GNOME and KDE?</p>
+            <label><input type="radio" name="q3" value="vim"> vim</label>
+            <label><input type="radio" name="q3" value="nano"> nano</label>
+            <label><input type="radio" name="q3" value="gedit"> gedit</label>
+            <label><input type="radio" name="q3" value="emacs"> emacs</label>
+        </section>
+    
+        <section class="question" id="question4">
+            <p>Question 4: What is the primary purpose of Nano, a simple text editor commonly used in Linux?</p>
+            <label><input type="radio" name="q4" value="Advanced text manipulation"> Advanced text manipulation</label>
+            <label><input type="radio" name="q4" value="Programming and scripting"> Programming and scripting</label>
+            <label><input type="radio" name="q4" value="Simplicity and ease of use"> Simplicity and ease of use</label>
+            <label><input type="radio" name="q4" value="Web development"> Web development</label>
+        </section>
+    
+        <section class="question" id="question5">
+            <p>Question 5: How can you exit Vim and save changes made to a file?</p>
+            <label><input type="radio" name="q5" value=":q!"> :q!</label>
+            <label><input type="radio" name="q5" value=":wq"> :wq</label>
+            <label><input type="radio" name="q5" value="Esc + x"> Esc + x</label>
+            <label><input type="radio" name="q5" value="Ctrl + C"> Ctrl + C</label>
+        </section>
+    
+        <section class="question" id="question6">
+            <p>Question 6: In Emacs, what key combination is used to save changes and exit the editor?</p>
+            <label><input type="radio" name="q6" value="Ctrl + S"> Ctrl + S</label>
+            <label><input type="radio" name="q6" value="Ctrl + X, Ctrl + S"> Ctrl + X, Ctrl + S</label>
+            <label><input type="radio" name="q6" value="Ctrl + W"> Ctrl + W</label>
+            <label><input type="radio" name="q6" value="Alt + S"> Alt + S</label>
+        </section>
+    
+        <section class="question" id="question7">
+            <p>Question 7: Which command opens a file for editing in the Gedit text editor from the Linux command line?</p>
+            <label><input type="radio" name="q7" value="gedit"> gedit</label>
+            <label><input type="radio" name="q7" value="edit"> edit</label>
+            <label><input type="radio" name="q7" value="open"> open</label>
+            <label><input type="radio" name="q7" value="nano"> nano</label>
+        </section>
+    
+        <section class="question" id="question8">
+            <p>Question 8: What is the purpose of the 'cat' command in the context of text editors in Linux?</p>
+            <label><input type="radio" name="q8" value="Concatenate and display file contents"> Concatenate and display file contents</label>
+            <label><input type="radio" name="q8" value="Create a new file"> Create a new file</label>
+            <label><input type="radio" name="q8" value="Copy files"> Copy files</label>
+            <label><input type="radio" name="q8" value="Check disk space"> Check disk space</label>
+        </section>
+    
+        <section class="question" id="question9">
+            <p>Question 9: Which text editor is known for its extensibility and customization through Lisp programming language?</p>
+            <label><input type="radio" name="q9" value="vim"> vim</label>
+            <label><input type="radio" name="q9" value="nano"> nano</label>
+            <label><input type="radio" name="q9" value="gedit"> gedit</label>
+            <label><input type="radio" name="q9" value="emacs"> emacs</label>
+        </section>
+    
+        <section class="question" id="question10">
+            <p>Question 10: What is the primary advantage of using a terminal-based text editor like Vim or Nano over a graphical text editor?</p>
+            <label><input type="radio" name="q10" value="Better syntax highlighting"> Better syntax highlighting</label>
+            <label><input type="radio" name="q10" value="More features and plugins"> More features and plugins</label>
+            <label><input type="radio" name="q10" value="Simplicity and efficiency in a terminal environment"> Simplicity and efficiency in a terminal environment</label>
+            <label><input type="radio" name="q10" value="Graphical interface"> Graphical interface</label>
+        </section>
+    
+    
+        
+        <button id="submitBtn">Submit</button>
+        <div id="result"></div>
+<script>
+    document.getElementById('submitBtn').addEventListener('click', checkAnswers);
+
+
+function checkAnswers() {
+ var marks = 0;
+ marks += checkQuestion('question1', 'nano');
+ marks += checkQuestion('question2', 'Command mode');
+ marks += checkQuestion('question3', 'gedit');
+ marks += checkQuestion('question4', 'Simplicity and ease of use');
+ marks += checkQuestion('question5', ':wq');
+ marks += checkQuestion('question6', 'Ctrl + X, Ctrl + S');
+ marks += checkQuestion('question7', 'gedit');
+ marks += checkQuestion('question8', 'Concatenate and display file contents');
+ marks += checkQuestion('question9', 'emacs');
+ marks += checkQuestion('question10', 'Simplicity and efficiency in a terminal environment');
+ document.getElementById('result').innerText = `You got ${marks} marks out of 10`;
+}
+
+function checkQuestion(questionId, correctAnswer) {
+ var selectedAnswer = document.querySelector(`#${questionId} input:checked`);
+ var options = document.querySelectorAll(`#${questionId} input`);
+
+ options.forEach(function(option) {
+     option.parentElement.classList.remove('correct', 'wrong');
+
+     if (option.value === correctAnswer) {
+         option.parentElement.classList.add('correct');
+     }
+
+     if (option.checked && option.value !== correctAnswer) {
+         option.parentElement.classList.add('wrong');
+     }
+ });
+
+ return selectedAnswer && selectedAnswer.value === correctAnswer ? 1 : 0;
+}
+</script>
+
+
+</body>
+</html>
