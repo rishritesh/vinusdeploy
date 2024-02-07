@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Quiz Authentication</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            
+            background-image: url('https://wallpaper-house.com/data/out/7/wallpaper2you_179953.jpg');
+            text-align: center;
+            padding: 80px;
+            background-repeat: no-repeat;
+            background-size: cover;
+        padding-top: 300px;  
+        padding-left: 100px;
+        height: 45px  
+        }
+        
+
+        .auth-container {
+            background-color: rgb(176, 220, 176);
+        color: #fff;
+        font-weight:bold;
+        font-size: 20px;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 450px;
+            text-align: center;
+        }
+
+        .auth-container h2 {
+            margin-bottom: 60px;
+            color: #000000;
+            font-size: 40px;
+            
+        }
+
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: #000000;
+            font-size: 25px;
+        
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;   
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 20px;
+        }
+
+        .form-group button {
+            background-color: #364bc1;
+            color: #fff;
+            font-weight: bold;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 22px;
+        }
+
+        .form-group button:hover {
+            background-color: #cf851d;
+        }
+
+        .auth-toggle {
+            margin-top: 10px;
+            color:black
+        }
+    </style>
+</head>
+<body>
+
+<div class="auth-container">
+    <h2>Quiz Authentication</h2>
+    <div id="loginForm">
+        <form class="auth-form" onsubmit="return handleLogin();" method="post">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+        <p class="auth-toggle">Don't have an account? <a href="#" onclick="toggleForm()">Sign Up</a></p>
+    </div>
+
+    <div id="signupForm" style="display: none;">
+        <form class="auth-form" onsubmit="return handleSignup();" method="post">
+            <div class="form-group">
+                <label for="newUsername">New Username:</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+            </div>
+            <div class="form-group">
+                <label for="newPassword">New Password:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Sign Up</button>
+            </div>
+        </form>
+        <p class="auth-toggle">Already have an account? <a href="#" onclick="toggleForm()">Login</a></p>
+    </div>
+</div>
+
+<script>
+    function toggleForm() {
+        var loginForm = document.getElementById('loginForm');
+        var signupForm = document.getElementById('signupForm');
+
+        if (loginForm.style.display === 'none') {
+            loginForm.style.display = 'block';
+            signupForm.style.display = 'none';
+        } else {
+            loginForm.style.display = 'none';
+            signupForm.style.display = 'block';
+        }
+    }
+
+    function handleLogin() {
+        // Authentication logic here
+        alert("Login successful!");
+        window.location.href = "index.html";
+        return false; // Prevent form submission
+    }
+
+    function handleSignup() {
+        // Signup logic here
+        alert("Sign Up successful!");
+        toggleForm(); // Switch to login form after signup
+        return false; // Prevent form submission
+    }
+</script>
+
+</body>
+</html>
