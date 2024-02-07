@@ -9,7 +9,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #9bc6f0;
+            background-color: #000000;
             padding: 40px;
             color: #64686c;
         }
@@ -63,7 +63,35 @@
             color: #d63384;
            
         }
-
+        .button{ 
+    padding-top: 40px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffffff;
+    padding: 4px;
+    border: #0b0b0b solid 4px;
+    border-radius: 4px;
+    text-align: center;
+background-color: #000000;
+margin-top: 30px;
+}
+a {
+          
+            margin: 35px;
+            padding: 25px 35px;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: solid;
+            background-color: #000000;
+            color: #ffffff;
+            border-radius: 40px;}
+.button-div{
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+a:hover {
+            background-color: #9bc6f0;}
         #datetime {
             font-size: 14px;
             position: fixed;
@@ -78,63 +106,45 @@
 <body>
 <div class="container">
 <h1>Linux Basic Commands</h1>
-<h2>1.touch</h2>
-<p>  It is used to create, modify and change a blank file.</p>
-<pre>
-  <code> touch filename.txt  </code>
-</pre>
-
- <h2>2. mkdir</h2>
-<p> It is used to make a directory(in Linux) or folder(in windows)</p>
-<pre>
-  <code> mkdir dirname </code>
-</pre>
-<h2>3. vim</h2>
-<p>  This is an enhanced version of VI text editor. In Linux it is used to add and edit text.</p>
-<pre>
-  <code> vim filename  </code>
-</pre>
-<h2>4. chown</h2>
-<p>  It is used to change the owner or group of a file or directory. And it gives all read, write and execute permission to the corresponding owner.</p>
-<pre>
-  <code> chown newowner filename  </code>
-</pre>
-<h2>5. chmod </h2>
-<p>  The chmod command is used to allow an administrator to set or modify a file’s
-  permissions. If you are giving a 777 permission to user, then they get
-  permission to read, write and execute the file..</p>
-  <h3>a). Changing Permissions Using Octal Notation:  </h3>
-  <p>for giving read and write permission to user, read permission to group and others.</p>
-<pre>
-  <code> chmod 644 filename   </code>
-</pre>
-<h3>b). Changing Permissions Using Symbolic Notation: </h3>
-<p>for giving execute(x) permission to users. </p>
-<pre>
-  <code>chmod u+x filename</code>
-</pre>
-<h3>c). Removing Execute Permission:</h3>
-<p>his command removes execute permission for all (a) users from the script file </p>
-<pre>
-  <code>chmod a-x script.sh
-  </code>
-</pre>
-<h2>6. chgrp</h2>
-<p>  It is used to change the group ownership of a file or directory. And it gives all read, write and execute permission to the corresponding owner.</p>
-<pre>
-  <code> chgrp newgroup filename </code>
-</pre>
-<h2>7.ls</h2>
+<h2>1. whoami</h2>
+<p>The whoami command is used to display the effective user ID of the current user.</p><p> It prints the username associated with the current user's session.</p>
+<h2>2. ls</h2>
 <p>   It is used to list down the names and features of files and directories.</p>
 <pre>
   <code> ls  </code>
 </pre>
-<h2>8. ll</h2>
+<h2>3. ll</h2>
 <p>  It is used to list the long information about files and directories in the system.</p>
 <pre>
   <code> ls -l
     ll  </code>
 </pre>
+<h2>4. cal </h2>
+<p> The cal command in Linux is used to display a calendar in the terminal. By default, it shows the current month's calendar. </p>
+<h2>5. date</h2>
+<p>
+  The date command in Linux is used to display the current date and time or to set the system date and time. Here's an overview of the date command:
+  
+  </p>
+<h2>6. pwd</h2>
+<p>The pwd command in Linux stands for "Print Working Directory." It is used to display the current working directory, which is the directory you are currently located in within the file system.</p>
+
+
+
+<h2>7.touch</h2>
+<p>  It is used to create, modify and change a blank file.</p>
+<pre>
+  <code> touch filename.txt  </code>
+</pre>
+
+ <h2>8. mkdir</h2>
+<p> It is used to make a directory(in Linux) or folder(in windows)</p>
+<pre>
+  <code> mkdir dirname </code>
+</pre>
+
+
+
 <h2>9. cat</h2>
 <p>  It is used to see the data added in a file. When we use “cat (file name)”, then it adds data in the file.
 </p>
@@ -148,40 +158,36 @@
 <h3>b). Append Contents to an Existing File:</h3>
 <pre><code>cat >> existingfile_name
 </code></pre>
-<h2>10.grep</h2>
-<p>  It works as a filter that searches for lines matching a specific pattern and prints the matching lines to standard output. This command searches for the specified string ("search_string") in the file filename and prints the lines containing the match.</p>
-<pre>
-  <code> grep "search_string" filename  </code>
-</pre>
-<h2>11.head</h2>
+
+<h2>10.head</h2>
 <p>  It is used to filter the head lines to a particular number of lines (for e.g. – if we want to see data of starting 4 lines, then we use:  head –n 20 (file name).</p>
 <pre>
   <code> head -n 20 filename  </code>
 </pre>
-<h2>12. tail</h2>
+<h2>11. tail</h2>
 <p>  It is used to filter the tail lines to a particular number of lines (for e.g. – if
   we want to see data of starting 4 lines, then we use:  tail –n 20 (file name)</p>
 <pre>
   <code> tail -n 20 filename </code>
 </pre>
 
-<h2>13. less</h2>
+<h2>12. less</h2>
 <p>  This command is used to read the contents of a text file’s one page (one screen) at a time.</p>
 <pre>
   <code> less filename </code>
 </pre>
-<h2>14. more</h2>
+<h2>13. more</h2>
 <p>  This command is used to read the contents of a text file’s one page. At the last page there is a “more” option which appends the data up to the next page.</p>
 <pre>
   <code> more filename  </code>
 </pre>
-<h2>15. echo</h2>
+<h2>14. echo</h2>
 <p> Echo command is used to print the text or strings which are passed as
   arguments on the command line. It is mainly used in scripting.</p>
 <pre>
   <code> echo "Hello, World!"  </code>
 </pre>
-<h2>16. rm</h2>
+<h2>15. rm</h2>
 <p>  The rm command is used to remove objects such as files, symbolic links and so on from the file system while the rm -r command is used to delete an entire directory.</p>
 <pre>
   <code> rm filename
@@ -190,268 +196,123 @@
 </pre>
 <p>This command removes all files in the current directory with a .txt extension.
 </p>
-<h2>17. cp</h2>
+<h2>16. cp</h2>
 <p>  The cp command is used for copying files from one location to another.</p>
 <pre>
   <code> cp oldfile.txt newfile.txt  </code>
 </pre>
-<h2>18. mv</h2>
+<h2>17. mv</h2>
 <p>   The mv command moves files and directories from one directory to another or renames a file or directory. If you move a file or directory to a new directory, it retains the base file name.</p>
 <pre>
   <code> mv oldfile.txt newfile.txt  </code>
 </pre>
-<h2>19. scp</h2>
-<p>  SCP (Secure Copy Protocol) is a network protocol that securely copies files/folders between Linux (Unix) systems on a network. It is an alternate command of <strong>cp</strong></p>
-<pre>
-  <code> scp username@remote_host:/path/to/source/file.txt /local/destination/  </code>
-</pre>
-<h2>20. useradd</h2>
+
+<h2>18. useradd</h2>
 <p>  useradd is a Linux command for creating a new user. It requires various options to add and set up an active user account.</p>
 <pre>
   <code> sudo useradd john  </code>
 </pre>
-<h2>21. userdel</h2>
+<h2>22. userdel</h2>
 <p> The userdel command deletes an existing user. It does not delete the files in the user's home directory unless you supply the -r option. </p>
 <pre>
   <code> sudo userdel john  </code>
 </pre>
-<h2>22. usermod</h2>
+<h2>23. usermod</h2>
 <p>  usermod command or modify user is a command in Linux that is used to change the properties of a user in Linux through the command line.</p>
 <pre>
   <code> sudo usermod -l newname oldname  </code>
 </pre>
-<h2>23. groupadd</h2>
+<h2>24. groupadd</h2>
 <p> The groupadd command creates a new group account using the values specified on the command line plus the default values from the system.
 </p>
 <pre>
   <code> sudo groupadd mygroup  </code>
 </pre>
-<h2>24. groupdel</h2>
+<h2>25. groupdel</h2>
 <p>The groupdel command modifies the system account files, deleting all entries that refer to GROUP. </p>
 <pre>
   <code> sudo groupdel mygroup  </code>
 </pre>
 
-<h2>25. su</h2>
+<h2>26. su</h2>
 <p> The su command changes user credentials to those of the root user or to the user specified by the Name parameter</p>
 <pre>
   <code> su username</code>
 </pre>
-<h2>26. sudo</h2>
+<h2>27. sudo</h2>
 <p> The sudo command allows you to run programs with the security privileges of another user.</p>
 <pre>
   <code> sudo su  </code>
 </pre>
-<h2>27. ssh</h2>
-<p>  Secure Shell (SSH) is a widely used network protocol that provides a secure way to access remote servers and computers.</p>
-<pre>
-  <code>ssh username@remote_host  </code>
-</pre>
-<h2>28. ping</h2>
-<p> It is a utility that helps to test connectivity between two devices on a network. ping command sends a request to a specified device and waits for a response.</p>
-<pre>
-  <code>ping example.com
-  </code>
-</pre>
 
-<h2>29. telent</h2>
-<p> the telnet command is used to create a remote connection with a system over a TCP/IP network. It allows us to administrate other systems by the terminal.</p>
-<pre>
-  <code>telnet example.com </code>
-</pre>
-<h2>30. nc</h2>
-<p>  It stands for NetCat. It is a powerful tool for network diagnostics and data transfer. NC can operate in two modes: listen mode and connect mode. NC can be used for file transfers, port scanning, banner grabbing, and even setting up a chat system or a reverse shell.  It is a more effective way than telnet to check if a specific port is open on a destination system.
-</p>
-<pre>
-  <code> nc example.com 80  </code>
-  <p>This command connects to the host example.com on port 80.</p>
-</pre>
-<h2>31. which</h2>
+<h2>28. which</h2>
 <p> It is a command which is used to locate the executable file associated with the given command by searching it in the path environment variable.
 </p>
 <pre>
   <code> which ls </code>
 </pre>
-<h2>32. help</h2>
+<h2>29. help</h2>
 <p>  The help command provides information on built-in commands. </p>
 <pre>
   <code> [command] --help </code>
 </pre>
 
-<h2>33. man</h2>
+<h2>30. man</h2>
 <p>  man command in Linux is used to display the user manual of any command that we can run on the terminal. It provides a detailed view of the command.</p>
 <pre>
   <code> man chmod[command] </code>
 </pre>
-<h2>34. yum</h2>
-<p> Yum is a command-line package manager for RPM-based Linux systems, such as Red Hat Enterprise Linux, CentOS, Fedora, and Oracle Linux. It stands for "Yellowdog Updater, Modified" </p>
-<pre>
-  <code> sudo yum install package_name  </code>
-</pre>
-<h2>35. dnf</h2>
-<p> dnf command is a package manager command in Red - based Linux distros like Centos, fedora and RHEL. It stands for Danified YUM.</p>
-<pre>
-  <code>sudo dnf install package_name </code>
-</pre>
 
-<h2>36. rpm</h2>
-<p>  RPM is a command-line utility for managing packages on Unix/Linux systems. It allows you to install, query, update, verify and remove RPM packages.
-</p><p>It is the default package manager for Red Hat based systems and only works with the .rpm format.
-</p>
-<pre>
-  <code> sudo rpm -ivh package.rpm  </code>
-</pre>
-<h2>37. locate</h2>
+<h2>31. locate</h2>
 <p> It is a utility which serves to find files on filesystems. It searches through a pre-built database of files.
 </p>
 <pre>
   <code> locate filename </code>
 </pre>
-<h2>38. find</h2>
+<h2>32. find</h2>
 <p> It can be used to find files and directories and perform subsequent operations on them. It supports searching by file, folder, name, creation date, modification date, owner and permissions.</p>
 <pre>
   <code>find /path/to/search -name filename.txt  </code>
 </pre>
-<h2>39. du</h2>
+<h2>33. du</h2>
 <p> The du (disk usage) command measures the disk space occupied by files or directories. By default, it measures the current directory and all its subdirectories.
 </p>
 <pre>
   <code> du -h /path/to/directory  </code>
 </pre>
-<h2>40. df</h2>
-<p>The df command displays information about total space and available space on a file system.
-</p>
-<pre>
-  <code> df /dev/sda1  </code>
-</pre>
-<h2>41. tar</h2>
-<p> tar stands for “tape archive”. tar, by default, keeps the directory structure of archived files.
-	It is used to take backup and restore data in files.</p>
-  <p>-cvf:  create verbose forcefully </p>
-  <p>-xvf: extract verbose forcefully  </p>
-<pre>
-  <code> tar -cvf archive.tar files_directory  </code></pre>
-  <p>-c: Create a new archive. </p><p>-c: Create a new archive.</p><p>-f: Specify the archive file name. </p>
 
-<pre><code>tar -xvf archive.tar</code></pre>
-<p>-x: Extract files from an archive.</p><p>-v: Verbosely list the files processed.</p><p>-f: Specify the archive file name.</p>
-<h2>42. zip</h2>
-<p> A zip command is a powerful file packaging utility that can be used to compress and extract files and directories, as well as to add, update, and delete files from a zip archive</p>
-<pre>
-  <code> zip archive.zip file1.txt file2.txt directory/ </code>
-</pre>
-<h2>43. gzip </h2>
-<p>  Gzip command is used to compress the size of files or directories. When we apply the gzip command, then the .gz extension. Gunzip command is used to decompress the compressed size of the file to its original size. After gunzip, the .gz extension gets removed by itself.</p>
-<pre>
-  <code> gzip file.txt </code>
-</pre>
-<h2>44. ps</h2>
-<p> The ps command in Unix-like operating systems, including Linux, is used to display information about currently running processes. It provides a snapshot of the processes running on the system at the moment the command is executed. The basic syntax of the ps command is:</p>
-<pre>
-  <code> ps [OPTIONS]  </code>
-</pre>
 
-<h2>45. uptime</h2>
+<h2>34. uptime</h2>
 <p>  It tells how long the Linux system has been running.</p>
 <pre>
   <code>uptime  </code>
 </pre>
-<h2>46. last</h2>
+<h2>35. last</h2>
 <p>  The last command in Linux is used to display the list of all the users logged in and out since the file `/var/log/wtmp` was created.</p>
 <pre>
   <code> last username </code>
 </pre>
 
-<h2>47. reboot</h2>
+<h2>36. reboot</h2>
 <p> reboot command is used to restart or reboot the system. In a Linux system administration, there comes a need to restart the server after the completion of some network and other major updates.</p>
 <pre>
   <code> reboot [OPTIONS]  </code>
 </pre>
-<h2>48. awk</h2>
-<p> awk is used for manipulating data and generating report. It requires no compiling and allows the user to use variables, numeric functions, string functions and logical operators.</p>
-<pre>
-  <code> awk 'pattern { action }' input_file  </code>
-</pre>
-
-<h2>49. sed</h2>
-<p>It stands for stream editor and it can perform lots of functions on file like searching, find and replace, insert and delete.</p>
-<pre>
-  <code> sed [OPTIONS] 'COMMAND' input_file  </code>
-</pre>
-
-<h2>50. wget</h2>
-<p>  Wget is a networking command-line tool that lets you download files and interact with REST APIs. It supports the HTTP , HTTPS , FTP , and FTPS internet protocols. </p>
-<pre>
-  <code> wget [OPTIONS] [URL]
-    wget https://example.com/file.zip </code>
-</pre>
-<h2>51. curl</h2>
-<p>  It is a command line tool that enables data transfer over various network protocols. It communicates with a web or application server by specifying a relevant URL and the data that need to be sent or received.</p>
-<pre>
-  <code> curl [OPTIONS] [URL]</code>
-</pre>
 
 
-
-<h2>52. elinks</h2>
-<p> ELinks is a free text-based web browser for Unix-like operating systems</p>
-<pre>
-  <code> elinks https://example.com </code>
-</pre>
-<h2>53. free</h2>
-<p>  It allows you to check for memory RAM on your system or to check the memory statics of the Linux operating system.</p>
-<pre>
-  <code>free [OPTIONS]  </code>
-</pre>
-<h2>54. top</h2>
-<p>  The top (table of processes) command shows a real-time view of running processes in Linux and displays kernel-managed tasks. The command also provides a system information summary that shows resource utilization, including CPU and memory usage.
-</p>
-<h2>55. netstat</h2>
-<p> The netstat command generates displays that show network status and protocol statistics.</p>
-<pre>
-  <code>netstat [OPTIONS] </code>
-</pre>
-
-<h2>56. lscpu</h2>
+<h2>37. lscpu</h2>
 <p>  It is used to get detailed information about the CPU installed on your system.</p>
 <pre>
   <code>lscpu </code>
 </pre>
-<h2>57. dmidecode</h2>
-<p> It is a command- line tool on Linux systems that provides information about the system’s hardware components.</p>
-<pre>
-  <code> dmidecode [OPTIONS]  </code>
-</pre>
-<h2>58. lsblk</h2>
+
+<h2>38. lsblk</h2>
 <p> lsblk lists information about all available or the specified block devices. The lsblk command reads the sysfs filesystem and udev db to gather information.</p>
 <pre>
   <code> lsblk [OPTIONS] </code>
 </pre>
-<h2>59. nslookup</h2>
-<p>Use this command to find the address record for a domain. It queries domain name servers and gets the details.</p>
-<pre>
-  <code> nslookup example.com 8.8.8.8  </code>
-</pre>
-<h2>60. traceroute</h2>
-<p> traceroute in Linux is a command which enables the system to map the journey of the packet which contains information from source to destination.</p>
-<p> This method is very helpful in modern times in order to keep a track of the millions and millions of data transacted at each second.</p>
-<pre>
-  <code> touch filename.txt  </code>
-</pre>
-<h2>61. mtr</h2>
-<p> It stands for My TraceRoute. The path your packets are taking (including the IP addresses of each router) .</p>
-<pre>
-  <code> touch filename.txt  </code>
-</pre>
-<h2>62. tcpdump</h2>
-<p> It is a packet analyzer that is launched from the command line. It can be used to analyze network traffic by intercepting and displaying packets that are being created or received by the computer it's running on. </p>
-<pre>
-  <code> tcpdump [OPTIONS] [FILTER_EXPRESSION]
-  </code>
-</pre>
-
-
-
+<div class="button">
+  <a class="button-quiz" href="quiz_linux_basics.html">Go to quiz</a></div>
 <div id="datetime"></div>
 
 <script>
