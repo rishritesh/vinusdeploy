@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linux Advanced commands</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+      .correct {
+            color: green;
+        }
+
+        .wrong {
+            color: red;}
+    body {
+        background-color: #9bc6f0;
+        padding: 50px;
+    }
+
+    .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+    }
+
+    h1 {
+        color: #88bef5;
+        font-weight: bolder;
+        padding: 20px;
+        text-align: center;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    
+    }
+    p{
+        font-weight: bold;
+    }
+
+    input[type="radio"] {
+        margin-bottom: 20px;
+    }
+
+    button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #resultMessage {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+    <body>
+
+        <div class="container">
+            <h1 class="text-center">Linux Advanced commands</h1>
+    
+        <section class="question" id="question1">
+            <p>Question 1:  What is the primary purpose of the netstat command?</p>
+            <label><input type="radio" name="q1" value="Display system information"> Display system information</label>
+            <label><input type="radio" name="q1" value="View and filter system log messages"> View and filter system log messages</label>
+            <label><input type="radio" name="q1" value="Display network statistics and connections"> Display network statistics and connections</label>
+            <label><input type="radio" name="q1" value="Synchronize files between two locations"> Synchronize files between two locations</label>
+        </section>
+    
+        <section class="question" id="question2">
+            <p>Question 2: How does the curl command differ from the wget command?</p>
+            <label><input type="radio" name="q2" value="curl is used for compressing files, while wget is a remote system access command."> curl is used for compressing files, while wget is a remote system access command.</label>
+            <label><input type="radio" name="q2" value="curl is a remote file downloader, while wget is used for text processing."> curl is a remote file downloader, while wget is used for text processing.</label>
+            <label><input type="radio" name="q2" value="curl supports multiple protocols and is more versatile, while wget is simpler and focused on downloading files."> curl supports multiple protocols and is more versatile, while wget is simpler and focused on downloading files.</label>
+            <label><input type="radio" name="q2" value="curl and wget are interchangeable commands with no significant differences."> curl and wget are interchangeable commands with no significant differences.</label>
+        </section>
+    
+        <section class="question" id="question3">
+            <p>Question 3: What does the tar command do in Linux?</p>
+            <label><input type="radio" name="q3" value=" List files in a directory">  List files in a directory</label>
+            <label><input type="radio" name="q3" value="Create or extract compressed archive files"> Create or extract compressed archive files</label>
+            <label><input type="radio" name="q3" value="Display disk space usage"> Display disk space usage</label>
+            <label><input type="radio" name="q3" value="Synchronize files between two locations"> Synchronize files between two locations</label>
+        </section>
+    
+        <section class="question" id="question4">
+            <p>Question 4: What is the primary purpose of the iptables command in Linux?</p>
+            <label><input type="radio" name="q4" value="Display network configuration"> Display network configuration</label>
+            <label><input type="radio" name="q4" value="Configure IP packet filter rules"> Configure IP packet filter rules</label>
+            <label><input type="radio" name="q4" value=" Create or extract compressed archives">  Create or extract compressed archives</label>
+            <label><input type="radio" name="q4" value="Copy files securely over SSH"> Copy files securely over SSH</label>
+        </section>
+    
+        <section class="question" id="question5">
+            <p>Question 5: Which command is used to display detailed information about active processes?</p>
+            <label><input type="radio" name="q5" value="ps"> ps</label>
+            <label><input type="radio" name="q5" value="top"> top</label>
+            <label><input type="radio" name="q5" value="kill"> kill</label>
+            <label><input type="radio" name="q5" value="pstree"> pstree</label>
+        </section>
+    
+        <section class="question" id="question6">
+            <p>Question 6: What is the purpose of the chmod command in Linux?</p>
+            <label><input type="radio" name="q6" value="Change file owner and group"> Change file owner and group</label>
+            <label><input type="radio" name="q6" value=" Change file permissions">  Change file permissions</label>
+            <label><input type="radio" name="q6" value="Create a new directory"> Create a new directory</label>
+            <label><input type="radio" name="q6" value="Copy files securely over SSH"> Copy files securely over SSH</label>
+        </section>
+    
+        <section class="question" id="question7">
+            <p>Question 7: How can you use the scp command to copy a file from a remote server to your local machine?</p>
+            <label><input type="radio" name="q7" value="scp [file] [user@remote_server:local_destination]"> scp [file] [user@remote_server:local_destination]</label>
+            <label><input type="radio" name="q7" value="scp [user@remote_server:file] [local_destination]"> scp [user@remote_server:file] [local_destination]</label>
+            <label><input type="radio" name="q7" value="scp [local_destination] [user@remote_server:file]"> scp [local_destination] [user@remote_server:file]</label>
+            <label><input type="radio" name="q7" value="scp [file] [local_destination]"> scp [file] [local_destination]</label>
+        </section>
+    
+        <section class="question" id="question8">
+            <p>Question 8: How do you use the awk command to print specific columns from a text file? </p>
+            <label><input type="radio" name="q8" value="awk '{print $1, $3}' filename"> awk '{print $1, $3}' filename</label>
+            <label><input type="radio" name="q8" value="awk -f filename '{print $1, $3}'"> awk -f filename '{print $1, $3}'</label>
+            <label><input type="radio" name="q8" value="awk -p '{print $1, $3}' filename'"> awk -p '{print $1, $3}' filename</label>
+            <label><input type="radio" name="q8" value="awk -c '{print $1, $3}' filename"> awk -c '{print $1, $3}' filename</label>
+        </section>
+    
+        <section class="question" id="question9">
+            <p>Question 9: How can you use the zip command to compress a directory and its contents?</p>
+            <label><input type="radio" name="q9" value="zip [archive.zip] [directory]"> zip [archive.zip] [directory]</label>
+            <label><input type="radio" name="q9" value="zip -r [directory] [archive.zip]"> zip -r [directory] [archive.zip]</label>
+            <label><input type="radio" name="q9" value="zip -d [archive.zip] [directory]"> zip -d [archive.zip] [directory]</label>
+            <label><input type="radio" name="q9" value="zip -c [archive.zip] [directory]"> zip -c [archive.zip] [directory]</label>
+        </section>
+    
+        <section class="question" id="question10">
+            <p>Question 10: How do you find files in a directory based on their name?</p>
+            <label><input type="radio" name="q10" value=" Display network configuration">  Display network configuration</label>
+            <label><input type="radio" name="q10" value="Mount and unmount filesystems">  Mount and unmount filesystems</label>
+            <label><input type="radio" name="q10" value="Copy files securely over SSH"> Copy files securely over SSH</label>
+            <label><input type="radio" name="q10" value="Display system information"> Display system information</label>
+        </section>
+    
+    
+        
+        <button id="submitBtn">Submit</button>
+        <div id="result"></div>
+<script>
+    document.getElementById('submitBtn').addEventListener('click', function () {
+            if (validateAnswers()) {
+                checkAnswers();
+            } else {
+                alert('Please answer all questions before submitting.');
+            }
+        });
+
+        function validateAnswers() {
+            var questions = document.querySelectorAll('.question');
+            for (var i = 0; i < questions.length; i++) {
+                var selectedAnswer = questions[i].querySelector('input:checked');
+                if (!selectedAnswer) {
+                    return false; // Return false if any question is unanswered
+                }
+            }
+            return true; // All questions have been answered
+        }
+
+
+
+function checkAnswers() {
+ var marks = 0;
+ marks += checkQuestion('question1', 'Display network statistics and connections');
+ marks += checkQuestion('question2', 'curl supports multiple protocols and is more versatile, while wget is simpler and focused on downloading files.');
+ marks += checkQuestion('question3', "Create or extract compressed archive files");
+ marks += checkQuestion('question4', 'Configure IP packet filter rules');
+ marks += checkQuestion('question5', 'top');
+ marks += checkQuestion('question6', "Change file permissions");
+ marks += checkQuestion('question7', 'scp [file] [user@remote_server:local_destination]');
+ marks += checkQuestion('question8', "awk '{print $1, $3}' filename'");
+ marks += checkQuestion('question9', "zip -r [directory] [archive.zip]");
+ marks += checkQuestion('question10', 'Mount and unmount filesystems');
+ document.getElementById('result').innerText = `You got ${marks} marks out of 10`;
+}
+
+function checkQuestion(questionId, correctAnswer) {
+ var selectedAnswer = document.querySelector(`#${questionId} input:checked`);
+ var options = document.querySelectorAll(`#${questionId} input`);
+
+ options.forEach(function(option) {
+     option.parentElement.classList.remove('correct', 'wrong');
+
+     if (option.value === correctAnswer) {
+         option.parentElement.classList.add('correct');
+     }
+
+     if (option.checked && option.value !== correctAnswer) {
+         option.parentElement.classList.add('wrong');
+     }
+ });
+
+ return selectedAnswer && selectedAnswer.value === correctAnswer ? 1 : 0;
+}
+</script>
+
+
+</body>
+</html>
