@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Editors in Linux Quiz</title>
+  <title>File and directory management</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
       .correct {
@@ -156,7 +156,25 @@
         <button id="submitBtn">Submit</button>
         <div id="result"></div>
 <script>
-    document.getElementById('submitBtn').addEventListener('click', checkAnswers);
+     document.getElementById('submitBtn').addEventListener('click', function () {
+            if (validateAnswers()) {
+                checkAnswers();
+            } else {
+                alert('Please answer all questions before submitting.');
+            }
+        });
+
+        function validateAnswers() {
+            var questions = document.querySelectorAll('.question');
+            for (var i = 0; i < questions.length; i++) {
+                var selectedAnswer = questions[i].querySelector('input:checked');
+                if (!selectedAnswer) {
+                    return false; // Return false if any question is unanswered
+                }
+            }
+            return true; // All questions have been answered
+        }
+
 
 
 function checkAnswers() {
