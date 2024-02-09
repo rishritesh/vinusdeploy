@@ -11,39 +11,44 @@
             
             background-image: url('https://wallpaper-house.com/data/out/7/wallpaper2you_179953.jpg');
             text-align: center;
-            padding: 80px;
+            padding: 40px;
             background-repeat: no-repeat;
             background-size: cover;
-        padding-top: 300px;  
+        padding-top: 10px;  
         padding-left: 100px;
-        height: 45px  
+        height: 55px  
         }
-        
+        h1 {
+            color: #fff700;
+            font-family:serif;
+            font-weight: 900;
+            font-size: 85px;
+        }
 
         .auth-container {
-            background-color: rgb(176, 220, 176);
-        color: #fff;
-        font-weight:bold;
-        font-size: 20px;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 450px;
-            text-align: center;
-        }
-
+    position: absolute;
+    top: 200px; /* Adjust this value as needed */
+    left: 20%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: #c4cb98;
+    font-weight: bold;
+    font-size: 22px;
+    border-radius: 8px;
+    width: 500px;
+    height: 550px;
+    text-align: center;
+}
         .auth-container h2 {
-            margin-bottom: 60px;
+            padding-top: 5px;
+            height: 45px;
+            margin-bottom: 40px;
             color: #000000;
-            font-size: 40px;
-            
+            font-size: 45px;
+            font-family: serif;
+           
         }
 
-        .auth-form {
-            display: flex;
-            flex-direction: column;
-            
-        }
 
         .form-group {
             margin-bottom: 15px;
@@ -73,30 +78,37 @@
             font-weight: bold;
             padding: 15px;
             border: none;
-            border-radius: 4px;
+            border-radius: 14px;
+            width: 130px;
             cursor: pointer;
             font-size: 22px;
+            margin-top: 20px;
         }
-
+        
         .form-group button:hover {
             background-color: #cf851d;
         }
 
         .auth-toggle {
-            margin-top: 10px;
+            margin-top: 1px;
             color:black
         }
     </style>
 </head>
 <body>
+    <h1>Welcome to the Linux Learning Platform</h1>
 
 <div class="auth-container">
-    <h2>Quiz Authentication</h2>
+    <h2>Enter your details</h2>
     <div id="loginForm">
         <form class="auth-form" onsubmit="return handleLogin();" method="post">
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="E-mail">Enter E-mail address</label>
+                <input type="text" id="E-mail" name="E-mail" required>
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
@@ -113,6 +125,10 @@
         <form class="auth-form" onsubmit="return handleSignup();" method="post">
             <div class="form-group">
                 <label for="newUsername">New Username:</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+            </div>
+            <div class="form-group">
+                <label for="E-mail">Enter E-mail address</label>
                 <input type="text" id="newUsername" name="newUsername" required>
             </div>
             <div class="form-group">
@@ -143,8 +159,16 @@
 
     function handleLogin() {
         // Authentication logic here
-        alert("Login successful!");
-        window.location.href = "index.html";
+        var username = document.getElementById('username').value;
+
+        if (username.trim() !== "") {
+            localStorage.setItem('username', username);
+            alert("Login successful!");
+            window.location.href = "index.html";
+        } else {
+            alert("Please enter a username.");
+        }
+
         return false; // Prevent form submission
     }
 
