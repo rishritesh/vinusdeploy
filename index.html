@@ -17,7 +17,7 @@
         }
 
         h1 {
-            color: #000000;
+            color: #1f11a4;
          padding-top: 40px;
             font-family:serif;
             font-weight: bold;
@@ -55,7 +55,7 @@
 </head>
 <body>
                                                                                                        
-<h1>Welcome to the Linux Learning Platform</h1>
+<h1>Welcome <span id="usernameSpan"></span></h1>
 
 
 <div class="content-links">
@@ -66,16 +66,27 @@
 <div id="datetime"></div>
 
 <script>
-    function updateDateTime() {
-        const now = new Date();
-        const options = { timeZone: 'Asia/Kolkata', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
-        const formattedDate = now.toLocaleDateString('en-IN', options);
-        document.getElementById('datetime').textContent = formattedDate;
-    }
 
-    updateDateTime();
-    setInterval(updateDateTime, 1000); // Update every second
-</script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = { timeZone: 'Asia/Kolkata', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+            const formattedDate = now.toLocaleDateString('en-IN', options);
+            document.getElementById('datetime').textContent = formattedDate;
+        }
+
+        function setUsername() {
+            const storedUsername = localStorage.getItem('username');
+            const usernameSpan = document.getElementById('usernameSpan');
+
+            if (storedUsername) {
+                usernameSpan.textContent = storedUsername;
+            }
+        }
+
+        updateDateTime();
+        setUsername();
+        setInterval(updateDateTime, 1000); // Update every second
+    </script>
 
 </body>
 </html>
