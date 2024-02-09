@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Managing Local Linux Users and Groups</title>
+    <title>Linux Advanced Commands</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
@@ -20,6 +20,7 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         margin-top: 50px;
     }
+
         h1, h2, h3 {
             font-weight: bold;
             padding-top: 40px;
@@ -28,8 +29,9 @@
 
         h1 {
             font-size: 40px;
-            color: #131415; /* Blue color */
+            color: #060707; /* Blue color */
             padding-top: 20px;
+            padding-bottom: 20px;
             text-align: center;
         
         }
@@ -41,7 +43,8 @@
 
         h3 {
             font-size: 18px;
-            color: #3d3535;
+            color: #000000;
+          
         }
 
         p {
@@ -95,171 +98,203 @@ a:hover {
             bottom: 10px;
             right: 10px;
             color: #6c757d;
-        }
+       
+       }
     </style>
 </head>
 
 <body>
 <div class="container">
-<h1>Managing Local Linux Users and Groups</h1>
-
-<p>
-    In a Linux environment, effective management of users and groups is crucial for both security and productivity.</p>
-    <p>
-        Properly assigning permissions based on roles and responsibilities ensures secure access to resources and prevents
-        unauthorized data exposure.
-    This practice also aids in maintaining an organized and efficient system by allowing
-    administrators to control resource allocation and monitor user activity.
-</p>
-
-<h2>1. Understanding Users</h2>
-
-<p>
-    A user in Linux represents an account created for an individual or a process interacting with the system.</p><p> Each
-    user is uniquely identified by a username and password and is assigned a User ID (UID). The UID plays a vital
-    role in determining the user's permissions and privileges within the system.
-</p>
-
-<h2>2. Understanding Groups</h2>
-
-<p>
-    A group in Linux is a collection of users sharing common access privileges.</p> <p> Each group is identified by a Group
-    ID (GID), which helps in determining the group's permissions and privileges. Groups streamline access control by
-    associating users with similar access requirements.
-</p>
-
-<h2>3. Types of Users and Groups</h2>
-
-<p>
-    There are two main types of users in Linux: <strong>Superuser (root)</strong> and <strong>Regular users</strong>.
-  </p>  <p>The Superuser possesses complete control over the system, while regular users are confined to their assigned
-    resources.
-</p>
-
-<p>
-    Similarly, Linux has two types of groups: <strong>Primary </strong> and <strong>Secondary groups</strong>.</p><p> The
-    Primary group is assigned to a user during the account creation, while Secondary groups can be added later.
-</p>
-
-<h2>4. Managing Users in Linux</h2>
-
-<h3>a). Creating New Users</h3>
-
-<p>
-    To create a new user in Linux, use the <code>useradd</code> command. The following syntax can be used:
-</p>
-
+<h1>Linux Advanced Commands</h1>
+<h2>1. vim</h2>
+<p>  This is an enhanced version of VI text editor. In Linux it is used to add and edit text.</p>
 <pre>
-        <code>
-            sudo useradd [options] username
-        </code>
-    </pre>
-
-<p>
-    For example, to create a new user named "Vinus," use the command:
-</p>
-
-
-<pre>
-        <code>
-            sudo useradd Vinus
-        </code>
-    </pre>
-
-<h3>b). Modifying User Accounts</h3>
-
-<p>
-    To modify a user account, use the <code>usermod</code> command. For instance, to change the home directory of
-    the user "Vinus," use the following command:
-</p>
-
-<pre>
-        <code>
-            sudo usermod -d /home/Vinus
-        </code>
-    </pre>
-
-<h3>c). Deleting User Accounts</h3>
-
-<p>
-    To delete a user account, use the <code>userdel</code> command. For example, to delete the user "Vinus," use:
-</p>
-
-<pre>
-        <code>
-            sudo userdel Vinus
-        </code>
-    </pre>
-    <h2>5. Managing Groups in Linux</h2>
-    <h3>
-        a). Creating New Groups
-    </h3>
-
-    <p>
-        To create a new group in Linux, we can use the <code>groupadd</code> command. This command creates a new group and assigns a GID.
-    </p>
-    <pre>
-        <code>
-            groupadd [options] groupname
-        </code>
-    </pre>
-    <p>
-        For example, to create a new group named "developers", we can use the following command:
-
-    </p>
-    <pre>
-        <code>
-            sudo groupadd developers
-        </code>
-    </pre>
-   <h3>
-   b). Adding Users to a Group
-   </h3> 
-<p> To add a user to a group in Linux, we can use the <code>usermod</code> command with the -aG option. This command adds a user to an existing group. The syntax for adding a user to a group is</p>
-<pre>
-    <code>
-        usermod -aG groupname username
-    </code>
+  <code> vim filename  </code>
 </pre>
-<p>
-    For example, to add the user "Abebe" to the "developers" group, we can use the following command:
-</p>
+<h2>2. chown</h2>
+<p>  It is used to change the owner or group of a file or directory. And it gives all read, write and execute permission to the corresponding owner.</p>
 <pre>
-    <code>
-        sudo usermod -aG developers Abebe
-    </code>
+  <code> chown newowner filename  </code>
 </pre>
-<h3>c). Modifying Group Accounts</h3>
-<p>To modify a group account in Linux, we can use the <code>groupmod</code> command. 
-
-    This command allows us to change the group's name and GID. The syntax for modifying a group account is:   
-</p>
+<h2>3. chmod </h2>
+<p>  The chmod command is used to allow an administrator to set or modify a file’s
+  permissions. If you are giving a 777 permission to user, then they get
+  permission to read, write and execute the file..</p>
+  <h3>a). Changing Permissions Using Octal Notation:  </h3>
+  <p>for giving read and write permission to user, read permission to group and others.</p>
 <pre>
-    <code>
-        groupmod [options] groupname
-
-    </code>
+  <code> chmod 644 filename   </code>
 </pre>
-<p>
-    For example, to change the name of the "developers" group to "devops", we can use the following command:
-</p>
+<h3>b). Changing Permissions Using Symbolic Notation: </h3>
+<p>for giving execute(x) permission to users. </p>
 <pre>
-    <code>
-        sudo groupmod -n devops developers
-
-    </code>
+  <code>chmod u+x filename</code>
 </pre>
-<h3>d). Deleting Group Accounts</h3>
-<p>To delete a group account in Linux, we can use the <code>groupdel</code> command. This command removes the group from the system. 
-</p> <p>For example, to delete the "devops" group, we can use the following command:
+<h3>c). Removing Execute Permission:</h3>
+<p>his command removes execute permission for all (a) users from the script file </p>
+<pre>
+  <code>chmod a-x script.sh
+  </code>
+</pre>
+<h2>4. chgrp</h2>
+<p>  It is used to change the group ownership of a file or directory. And it gives all read, write and execute permission to the corresponding owner.</p>
+<pre>
+  <code> chgrp newgroup filename </code>
+</pre>
+<h2>5.grep</h2>
+<p>  It works as a filter that searches for lines matching a specific pattern and prints the matching lines to standard output. This command searches for the specified string ("search_string") in the file filename and prints the lines containing the match.</p>
+<pre>
+  <code> grep "search_string" filename  </code>
+</pre>
+<h2>6. scp</h2>
+<p>  SCP (Secure Copy Protocol) is a network protocol that securely copies files/folders between Linux (Unix) systems on a network. It is an alternate command of <strong>cp</strong></p>
+<pre>
+  <code> scp username@remote_host:/path/to/source/file.txt /local/destination/  </code>
+</pre>
+<h2>7. ssh</h2>
+<p>  Secure Shell (SSH) is a widely used network protocol that provides a secure way to access remote servers and computers.</p>
+<pre>
+  <code>ssh username@remote_host  </code>
+</pre>
+<h2>8. ping</h2>
+<p> It is a utility that helps to test connectivity between two devices on a network. ping command sends a request to a specified device and waits for a response.</p>
+<pre>
+  <code>ping example.com
+  </code>
+</pre>
+
+<h2>9. telent</h2>
+<p> the telnet command is used to create a remote connection with a system over a TCP/IP network. It allows us to administrate other systems by the terminal.</p>
+<pre>
+  <code>telnet example.com </code>
+</pre>
+<h2>10. nc</h2>
+<p>  It stands for NetCat. It is a powerful tool for network diagnostics and data transfer. NC can operate in two modes: listen mode and connect mode. NC can be used for file transfers, port scanning, banner grabbing, and even setting up a chat system or a reverse shell.  It is a more effective way than telnet to check if a specific port is open on a destination system.
 </p>
 <pre>
-    <code>
-        sudo groupdel devops
-    </code>
+  <code> nc example.com 80  </code>
+  <p>This command connects to the host example.com on port 80.</p>
+</pre>
+<h2>11. yum</h2>
+<p> Yum is a command-line package manager for RPM-based Linux systems, such as Red Hat Enterprise Linux, CentOS, Fedora, and Oracle Linux. It stands for "Yellowdog Updater, Modified" </p>
+<pre>
+  <code> sudo yum install package_name  </code>
+</pre>
+<h2>12. dnf</h2>
+<p> dnf command is a package manager command in Red - based Linux distros like Centos, fedora and RHEL. It stands for Danified YUM.</p>
+<pre>
+  <code>sudo dnf install package_name </code>
+</pre>
+
+<h2>13. rpm</h2>
+<p>  RPM is a command-line utility for managing packages on Unix/Linux systems. It allows you to install, query, update, verify and remove RPM packages.
+</p><p>It is the default package manager for Red Hat based systems and only works with the .rpm format.
+</p>
+<pre>
+  <code> sudo rpm -ivh package.rpm  </code>
+</pre>
+<h2>14. df</h2>
+<p>The df command displays information about total space and available space on a file system.
+</p>
+<pre>
+  <code> df /dev/sda1  </code>
+</pre>
+<h2>15. tar</h2>
+<p> tar stands for “tape archive”. tar, by default, keeps the directory structure of archived files.
+	It is used to take backup and restore data in files.</p>
+  <p>-cvf:  create verbose forcefully </p>
+  <p>-xvf: extract verbose forcefully  </p>
+<pre>
+  <code> tar -cvf archive.tar files_directory  </code></pre>
+  <p>-c: Create a new archive. </p><p>-c: Create a new archive.</p><p>-f: Specify the archive file name. </p>
+
+<pre><code>tar -xvf archive.tar</code></pre>
+<p>-x: Extract files from an archive.</p><p>-v: Verbosely list the files processed.</p><p>-f: Specify the archive file name.</p>
+<h2>16. zip</h2>
+<p> A zip command is a powerful file packaging utility that can be used to compress and extract files and directories, as well as to add, update, and delete files from a zip archive</p>
+<pre>
+  <code> zip archive.zip file1.txt file2.txt directory/ </code>
+</pre>
+<h2>17. gzip </h2>
+<p>  Gzip command is used to compress the size of files or directories. When we apply the gzip command, then the .gz extension. Gunzip command is used to decompress the compressed size of the file to its original size. After gunzip, the .gz extension gets removed by itself.</p>
+<pre>
+  <code> gzip file.txt </code>
+</pre>
+<h2>18. ps</h2>
+<p> The ps command in Unix-like operating systems, including Linux, is used to display information about currently running processes. It provides a snapshot of the processes running on the system at the moment the command is executed. The basic syntax of the ps command is:</p>
+<pre>
+  <code> ps [OPTIONS]  </code>
+</pre>
+<h2>19. awk</h2>
+<p> awk is used for manipulating data and generating report. It requires no compiling and allows the user to use variables, numeric functions, string functions and logical operators.</p>
+<pre>
+  <code> awk 'pattern { action }' input_file  </code>
+</pre>
+
+<h2>20. sed</h2>
+<p>It stands for stream editor and it can perform lots of functions on file like searching, find and replace, insert and delete.</p>
+<pre>
+  <code> sed [OPTIONS] 'COMMAND' input_file  </code>
+</pre>
+
+<h2>21. wget</h2>
+<p>  Wget is a networking command-line tool that lets you download files and interact with REST APIs. It supports the HTTP , HTTPS , FTP , and FTPS internet protocols. </p>
+<pre>
+  <code> wget [OPTIONS] [URL]
+    wget https://example.com/file.zip </code>
+</pre>
+<h2>22. curl</h2>
+<p>  It is a command line tool that enables data transfer over various network protocols. It communicates with a web or application server by specifying a relevant URL and the data that need to be sent or received.</p>
+<pre>
+  <code> curl [OPTIONS] [URL]</code>
+</pre>
+<h2>23. elinks</h2>
+<p> ELinks is a free text-based web browser for Unix-like operating systems</p>
+<pre>
+  <code> elinks https://example.com </code>
+</pre>
+<h2>24. free</h2>
+<p>  It allows you to check for memory RAM on your system or to check the memory statics of the Linux operating system.</p>
+<pre>
+  <code>free [OPTIONS]  </code>
+</pre>
+<h2>25. top</h2>
+<p>  The top (table of processes) command shows a real-time view of running processes in Linux and displays kernel-managed tasks. The command also provides a system information summary that shows resource utilization, including CPU and memory usage.
+</p>
+<h2>26. netstat</h2>
+<p> The netstat command generates displays that show network status and protocol statistics.</p>
+<pre>
+  <code>netstat [OPTIONS] </code>
+</pre>
+<h2>27. dmidecode</h2>
+<p> It is a command- line tool on Linux systems that provides information about the system’s hardware components.</p>
+<pre>
+  <code> dmidecode [OPTIONS]  </code>
+</pre>
+<h2>28. traceroute</h2>
+<p> traceroute in Linux is a command which enables the system to map the journey of the packet which contains information from source to destination.</p>
+<p> This method is very helpful in modern times in order to keep a track of the millions and millions of data transacted at each second.</p>
+<pre>
+  <code> touch filename.txt  </code>
+</pre>
+<h2>29. mtr</h2>
+<p> It stands for My TraceRoute. The path your packets are taking (including the IP addresses of each router) .</p>
+<pre>
+  <code> touch filename.txt  </code>
+</pre>
+<h2>30. tcpdump</h2>
+<p> It is a packet analyzer that is launched from the command line. It can be used to analyze network traffic by intercepting and displaying packets that are being created or received by the computer it's running on. </p>
+<pre>
+  <code> tcpdump [OPTIONS] [FILTER_EXPRESSION]
+  </code>
+</pre>
+<h2>31. nslookup</h2>
+<p>Use this command to find the address record for a domain. It queries domain name servers and gets the details.</p>
+<pre>
+  <code> nslookup example.com 8.8.8.8  </code>
 </pre>
 <div class="button">
-    <a class="button-quiz" href="quiz_managing_users_groups.html">Go to quiz</a></div>
+  <a class="button-quiz" href="quiz_linux_advance.html">Go to quiz</a></div>
 <div id="datetime"></div>
 
 <script>
@@ -280,7 +315,7 @@ a:hover {
     }
 
     updateDateTime();
-    setInterval(updateDateTime, 1000); // Update every second
+    setInterval(updateDateTime, 1000); 
 </script>
 </div>
 </body>
