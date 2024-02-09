@@ -62,6 +62,21 @@
         margin-top: 20px;
         font-weight: bold;
     }
+
+.vinus{
+    margin: 35px;
+          padding: 25px 35px;
+          font-size: 22px;
+          font-weight: bold;
+          text-decoration: solid;
+          background-color: #000000;
+          color: #ffffff;
+          border-radius: 40px;
+          text-align: center;
+          position:relative;
+          margin-left: 860px;
+}
+
   </style>
 </head>
 <body>
@@ -150,11 +165,14 @@
             <label><input type="radio" name="q10" value="sudoeradd username"> sudoeradd username</label>
             <label><input type="radio" name="q10" value="grantprivileges username sudo"> grantprivileges username sudo</label>
         </section>
-    
-    
-        
-        <button id="submitBtn">Submit</button>
+        <button id="submitBtn" >Submit</button>
+        <button class="btn" onclick="submitQuiz()">Check Score</button>
+
         <div id="result"></div>
+    
+        <div class="button"></div>
+        <div id="datetime"></div>
+    
 <script>
     document.getElementById('submitBtn').addEventListener('click', function () {
             if (validateAnswers()) {
@@ -190,29 +208,38 @@ function checkAnswers() {
  marks += checkQuestion('question9', 'Stores group account information');
  marks += checkQuestion('question10', 'usermod -aG sudo username');
 
- document.getElementById('result').innerText = `You got ${marks} marks out of 10`;
-}
+ //  document.getElementById('result').innerText = `You got ${marks} marks out of 10`;
+return marks;
+      }
 
-function checkQuestion(questionId, correctAnswer) {
- var selectedAnswer = document.querySelector(`#${questionId} input:checked`);
- var options = document.querySelectorAll(`#${questionId} input`);
+      
 
- options.forEach(function(option) {
-     option.parentElement.classList.remove('correct', 'wrong');
 
-     if (option.value === correctAnswer) {
-         option.parentElement.classList.add('correct');
-     }
+      function checkQuestion(questionId, correctAnswer) {
+        var selectedAnswer = document.querySelector(`#${questionId} input:checked`);
+        var options = document.querySelectorAll(`#${questionId} input`);
 
-     if (option.checked && option.value !== correctAnswer) {
-         option.parentElement.classList.add('wrong');
-     }
- });
+        options.forEach(function (option) {
+          option.parentElement.classList.remove('correct', 'wrong');
 
- return selectedAnswer && selectedAnswer.value === correctAnswer ? 1 : 0;
-}
+          if (option.value === correctAnswer) {
+            option.parentElement.classList.add('correct');
+          }
+
+          if (option.checked && option.value !== correctAnswer) {
+            option.parentElement.classList.add('wrong');
+          }
+        });
+
+        return selectedAnswer && selectedAnswer.value === correctAnswer ? 1 : 0;
+      }
+
+      function submitQuiz(){
+        const score=checkAnswers();
+        window.location.href=`result_intro.html?score=${score}`
+      }
 </script>
-
-
+</div>
+<button class="vinus" onclick="submitQuiz()">Check Score</button>
 </body>
 </html>
