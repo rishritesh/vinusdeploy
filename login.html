@@ -2,185 +2,224 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Quiz Authentication</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            
-            background-image: url('https://wallpaper-house.com/data/out/7/wallpaper2you_179953.jpg');
-            text-align: center;
-            padding: 40px;
-            background-repeat: no-repeat;
-            background-size: cover;
-        padding-top: 10px;  
-        padding-left: 100px;
-        height: 55px  
-        }
-        h1 {
-       
-        
-            color: #fff700;
-            font-family:serif;
-            font-weight: 900;
-            font-size: 85px;
-        }
-
-        .auth-container {
-    position: absolute;
-    top: 200px; /* Adjust this value as needed */
-    left: 20%;
-    transform: translateX(-50%);
-    padding: 10px;
-    background-color: #c4cb98;
-    font-weight: bold;
-    font-size: 22px;
-    border-radius: 8px;
-    width: 500px;
-    height: 550px;
-    text-align: center;
-}
-        .auth-container h2 {
-            padding-top: 5px;
-            height: 45px;
-            margin-bottom: 40px;
-            color: #000000;
-            font-size: 45px;
-            font-family: serif;
-           
-        }
-
-
-        .form-group {
-            margin-bottom: 15px;
-            
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 10px;
-            color: #000000;
-            font-size: 25px;
-        
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 8px;   
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 20px;
-        }
-
-        .form-group button {
-            background-color: #364bc1;
-            color: #fff;
-            font-weight: bold;
-            padding: 15px;
-            border: none;
-            border-radius: 14px;
-            width: 130px;
-            cursor: pointer;
-            font-size: 22px;
-            margin-top: 20px;
-        }
-        
-        .form-group button:hover {
-            background-color: #cf851d;
-        }
-
-        .auth-toggle {
-            margin-top: 1px;
-            color:black
-        }
-    </style>
+    <title>Animated Login & Registration Form HTML CSS | Codehal</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+<style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('/wallpaper2you_179953.jpg') repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes animateBlink {
+    0% {
+        background: rgb(0, 0, 0);
+    }
+    75% {
+        background: #000000;
+    }
+}
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    background: linear-gradient(90deg);
+    border-radius: 50px;
+    box-shadow: 0 0 60px rgb(0, 0, 0);
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.wrapper .text-right {
+    position: absolute;
+    top: 60px;
+    right: 180px;
+    color: #000000;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    font-size: 50px;
+    user-select: none;
+    font-family: 'Parisienne', cursive;
+}
+.wrapper .text-right::before {
+    content: 'Back';
+    position: absolute;
+    top: 60px;
+    right: -50px;
+}
+.wrapper img {
+    position: absolute;
+    right: -40px;
+    bottom: -160px;
+    width: 60%;
+    transform: rotate(260deg);
+}
+.form-wrapper {
+    z-index: 2;
+}
+.wrapper .form-wrapper.login {
+    transition: .7s ease-in-out;
+    transition-delay: .7s;
+}
+.wrapper.active .form-wrapper.login {
+    transition-delay: 0s;
+    transform: translateX(-400px);
+}
+.wrapper .form-wrapper.register {
+    position: absolute;
+    margin-top: 15px;
+    transform: translateX(-400px);
+    transition: .7s ease-in-out;
+}
+.wrapper.active .form-wrapper.register {
+    transition-delay: .7s;
+    transform: translateX(0);
+}
+h2 {
+    font-size: 2em;
+    text-align: center;
+    color: #000000;
+}
+.input-box {
+    position: relative;
+    width: 320px;
+    margin: 30px 0;
+}
+.input-box input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #000000;
+    outline: none;
+    border-radius: 40px;
+    font-size: 1em;
+    color: #000000;
+    padding: 0 20px 0 40px;
+}
+.input-box input::placeholder {
+    color: rgb(255, 255, 255);
+}
+.input-box .icon {
+    position: absolute;
+    left: 15px;
+    color: #ffffff;
+    font-size: 1.2em;
+    line-height: 55px;
+}
+.forgot-pass {
+    margin: -15px 0 15px 15px;
+}
+.forgot-pass a {
+    color: #ffffff;
+    font-size: .9em;
+    text-decoration: none;
+}
+.forgot-pass a:hover {
+    text-decoration: underline;
+}
+button {
+    width: 100%;
+    height: 45px;
+    background: #ffffff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #080808;
+    font-weight: 500;
+}
+.sign-link {
+    font-size: .9em;
+    text-align: center;
+    margin: 25px 0;
+}
+.sign-link p {
+    color: #f8f7f7;
+}
+.sign-link p a {
+    color: #f8f1f1;
+    text-decoration: none;
+    font-weight: 600;
+}
+.sign-link p a:hover {
+    text-decoration: underline;
+}</style>
 <body>
-    <h1>Welcome to the Linux Learning Platform</h1>
-
-<div class="auth-container">
-    <h2>Enter your details</h2>
-    <div id="loginForm">
-        <form class="auth-form" onsubmit="return handleLogin();" method="post">
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="E-mail">Enter E-mail address</label>
-                <input type="text" id="E-mail" name="E-mail" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="form-group">
+    <div class="wrapper">
+        
+        <div class="form-wrapper login">
+            <form action="http://localhost:3000/login" method="post">
+                <h2>Login</h2>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" id="password" name="password" placeholder="Password" required minlength="5">
+                </div>
+                
                 <button type="submit">Login</button>
-            </div>
-        </form>
-        <p class="auth-toggle">Don't have an account? <a href="#" onclick="toggleForm()">Sign Up</a></p>
+                <div class="sign-link">
+                    <p>Don't have an account? <a href="#" onclick="registerActive()">Register</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="form-wrapper register">
+            <form action="http://localhost:3000/register" method="post">
+                <h2>Registration</h2>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input type="text" id="name" name="name" placeholder="Full Name" required>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" id="password" name="password" placeholder="Password" required minlength="5">
+                </div>
+                <button type="submit">Register</button>
+                <div class="sign-link">
+                    <p>Already have an account? <a href="#" onclick="loginActive()">Login</a></p>
+                </div>
+            </form>
+        </div>
     </div>
-
-    <div id="signupForm" style="display: none;">
-        <form class="auth-form" onsubmit="return handleSignup();" method="post">
-            <div class="form-group">
-                <label for="newUsername">New Username:</label>
-                <input type="text" id="newUsername" name="newUsername" required>
-            </div>
-            <div class="form-group">
-                <label for="E-mail">Enter E-mail address</label>
-                <input type="text" id="newUsername" name="newUsername" required>
-            </div>
-            <div class="form-group">
-                <label for="newPassword">New Password:</label>
-                <input type="password" id="newPassword" name="newPassword" required>
-            </div>
-            <div class="form-group">
-                <button type="submit">Sign Up</button>
-            </div>
-        </form>
-        <p class="auth-toggle">Already have an account? <a href="#" onclick="toggleForm()">Login</a></p>
-    </div>
-</div>
-
-<script>
-    function toggleForm() {
-        var loginForm = document.getElementById('loginForm');
-        var signupForm = document.getElementById('signupForm');
-
-        if (loginForm.style.display === 'none') {
-            loginForm.style.display = 'block';
-            signupForm.style.display = 'none';
-        } else {
-            loginForm.style.display = 'none';
-            signupForm.style.display = 'block';
+    <script>const wrapper = document.querySelector('.wrapper');
+        function registerActive() {
+            wrapper.classList.toggle('active');
         }
-    }
-
-    function handleLogin() {
-        // Authentication logic here
-        var username = document.getElementById('username').value;
-
-        if (username.trim() !== "") {
-            localStorage.setItem('username', username);
-            alert("Login successful!");
-            window.location.href = "index.html";
-        } else {
-            alert("Please enter a username.");
+        function loginActive() {
+            wrapper.classList.toggle('active');
         }
-
-        return false; // Prevent form submission
-    }
-
-    function handleSignup() {
-        // Signup logic here
-        alert("Sign Up successful!");
-        toggleForm(); // Switch to login form after signup
-        return false; // Prevent form submission
-    }
-</script>
-
+        </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
