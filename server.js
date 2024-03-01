@@ -1,6 +1,8 @@
 const express = require('express');
-const mysql = require('mysql2');
+const mysql = require('mysql2');                                                                       
 const bodyParser = require('body-parser');
+const path = require('path');
+
 
 const app = express();
 const port = 3000;
@@ -22,10 +24,10 @@ const pool = mysql.createPool({
 
 
 app.post('/register', async (req, res) => {
-    const { username, email, password } = req.body;
+    const { name, email, password } = req.body;
 
     try {
-        if (username === undefined || email === undefined || password === undefined) {
+        if (name === undefined || email === undefined || password === undefined) {
             throw new Error('Invalid request body. Make sure all required fields are provided.');
         }
 
@@ -42,7 +44,7 @@ app.post('/register', async (req, res) => {
         }
 
 
-        const [result] = await connection.execute('INSERT INTO users (username, email, password) VALUES (?, ?, ?)', [username, email, password]);
+        const [result] = await connection.execute('INSERT INTO users (name, email, password) VALUES (?, ?, ?)', [name, email, password]);
         connection.release();
 
         res.redirect('/index.html');
@@ -89,28 +91,120 @@ app.post('/login', async (req, res) => {
     }
 });
 
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
 
+// Define routes for HTML files
 app.get('/index.html', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// app.get('/quiz.css', (req, res) => {
-//     res.setHeader('Content-Type', 'text/css');
-//     res.sendFile(__dirname + '/quiz.css');
-// });
-
-// app.get('/cddcdc.js', (req, res) => {
-//     res.setHeader('Content-Type', 'application/javascript');
-//     res.sendFile(__dirname + '/cddcdc.js');
-// });
-
-app.get('/login', (req, res) => {
-    res.sendFile(__dirname + '/login.html');
+app.get('/quiz_expression_with_grep.html', (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.sendFile(path.join(__dirname, 'quiz_expression_with_grep.html'));
 });
 
-// app.get('/jonatan-pie-3l3RwQdHRHg-unsplash.jpg', (req, res) => {
-//     res.sendFile(__dirname + '/jonatan-pie-3l3RwQdHRHg-unsplash.jpg');
-// });
+app.get('/quiz_file_management.html', (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.sendFile(path.join(__dirname, 'quiz_file_management.html'));
+});
+
+app.get('/quiz_intro.html', (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.sendFile(path.join(__dirname, 'quiz_intro.html'));
+});
+
+app.get('/quiz_linux_advance.html', (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.sendFile(path.join(__dirname, 'quiz_linux_advance.html'));
+});
+
+app.get('/quiz_linux_basics.html', (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.sendFile(path.join(__dirname, 'quiz_linux_basics.html'));
+});
+
+app.get('/quiz_managing_users_groups.html', (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.sendFile(path.join(__dirname, 'quiz_managing_users_groups.html'));
+});
+
+app.get('/quiz_permissions.html', (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.sendFile(path.join(__dirname, 'quiz_permissions.html'));
+});
+
+app.get('/quiz_vim_editing.html', (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.sendFile(path.join(__dirname, 'quiz_vim_editing.html'));
+});
+
+app.get('/quizzes.html', (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.sendFile(path.join(__dirname, 'quizzes.html'));
+});
+
+app.get('/result_intro.html', (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.sendFile(path.join(__dirname, 'result_intro.html'));
+});
+
+app.get('/login.html', (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.sendFile(path.join(__dirname, 'login.html'));
+});
+
+app.get('/tutorials.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'tutorials.html'));
+});
+
+app.get('/tutorial_basic_commands.html', (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.sendFile(path.join(__dirname, 'tutorial_basic_commands.html'));
+});
+
+app.get('/tutorial_expression_with_grep.html', (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.sendFile(path.join(__dirname, 'tutorial_expression_with_grep.html'));
+});
+
+app.get('/tutorial_file_management.html', (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.sendFile(path.join(__dirname, 'tutorial_file_management.html'));
+});
+
+app.get('/tutorial_intro.html', (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.sendFile(path.join(__dirname, 'tutorial_intro.html'));
+});
+
+app.get('/tutorial_linux_advance.html', (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.sendFile(path.join(__dirname, 'tutorial_linux_advance.html'));
+});
+
+app.get('/tutorial_managing_users_groups.html', (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.sendFile(path.join(__dirname, 'tutorial_managing_users_groups.html'));
+});
+
+app.get('/tutorial_permissions.html', (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.sendFile(path.join(__dirname, 'tutorial_permissions.html'));
+});
+
+app.get('/tutorial_vim_editing.html', (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.sendFile(path.join(__dirname, 'tutorial_vim_editing.html'));
+});
+
+app.get('/vinus.jpg', (req, res) => {
+    res.sendFile(path.join(__dirname, 'vinus.jpg'));
+});
+
+
+
+const PORT = process.env.PORT || 3000;
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
