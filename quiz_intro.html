@@ -76,15 +76,18 @@
           position:relative;
           margin-left: 860px;
 }
+#timer {
+    background-color: #c2defa;
+    color: #1d1c1c;
+    font-weight: 900;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 20px;
+}
 
-
-      #datetime {
-          font-size: 14px;
-          position: fixed;
-          bottom: 10px;
-          right: 10px;
-          color: #ffffff;
-      }
+     
   </style>
 </head>
 <body>
@@ -93,7 +96,7 @@
 
         <div class="container">
             <h1 class="text-center">Introduction to Linux</h1>
-    
+            <div id="timer"></div> <!-- Timer element added -->
         <section class="question" id="question1">
             <p>Question 1: Which two of the following are benefits of open source software for the user?</p>
             <label><input type="radio" name="q1" value="Code can survive the loss of the original developer or distributor"> Code can survive the loss of the original developer or distributor.</label>
@@ -189,24 +192,56 @@
     
 
 <script>
- document.getElementById('submitBtn').addEventListener('click', function () {
-        if (validateAnswers()) {
-          checkAnswers();
-        } else {
-          alert('Please answer all questions before submitting.');
-        }
-      });
-
-      function validateAnswers() {
-        var questions = document.querySelectorAll('.question');
-        for (var i = 0; i < questions.length; i++) {
-          var selectedAnswer = questions[i].querySelector('input:checked');
-          if (!selectedAnswer) {
-            return false; // Return false if any question is unanswered
-          }
-        }
-        return true; // All questions have been answered
-      }
+   var timeLeft;
+            var timerInterval;
+        
+            function startTimer() {
+                var startTime = localStorage.getItem('startTime');
+                var elapsedTime = Date.now() - startTime;
+                var totalTime = 600000; // 10 minutes in milliseconds
+                timeLeft = Math.max(totalTime - elapsedTime, 0);
+        
+                timerInterval = setInterval(function() {
+                    var minutes = Math.floor(timeLeft / 60000);
+                    var seconds = Math.floor((timeLeft % 60000) / 1000);
+        
+                    document.getElementById('timer').innerText = 'Time Left: ' + minutes + 'm ' + seconds + 's';
+        
+                    if (timeLeft <= 0) {
+                        clearInterval(timerInterval);
+                        alert('Ooops.. Time Up! Redirecting to dashboard.');
+                        window.location.href = 'index.html'; // Redirect to dashboard when time is up
+                    }
+        
+                    timeLeft -= 1000;
+                }, 1000);
+            }
+        
+            startTimer();
+            
+            window.addEventListener('beforeunload', function(event) {
+                localStorage.setItem('startTime', Date.now());
+            });
+        
+            document.getElementById('submitBtn').addEventListener('click', function () {
+                    if (validateAnswers()) {
+                        clearInterval(timerInterval); // Stop the timer when submitted
+                        checkAnswers();
+                    } else {
+                        alert('Please answer all questions before submitting.');
+                    }
+                });
+        
+                function validateAnswers() {
+                    var questions = document.querySelectorAll('.question');
+                    for (var i = 0; i < questions.length; i++) {
+                        var selectedAnswer = questions[i].querySelector('input:checked');
+                        if (!selectedAnswer) {
+                            return false; // Return false if any question is unanswered
+                        }
+                    }
+                    return true; // All questions have been answered
+                }
 
       function checkAnswers() {
         var marks = 0;
@@ -223,9 +258,6 @@
 //  document.getElementById('result').innerText = `You got ${marks} marks out of 10`;
 return marks;
       }
-
-      
-
 
       function checkQuestion(questionId, correctAnswer) {
         var selectedAnswer = document.querySelector(`#${questionId} input:checked`);
