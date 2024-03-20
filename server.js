@@ -14,37 +14,43 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const pool = mysql.createPool({
     host: 'localhost',
+    
     user: 'root',
     password: 'Vinus',
-    database: 'Vinus',
+    database: 'Project',
     waitForConnections: true,
-    connectionLimit: 10,
+    connectionLimit: 100,
     queueLimit: 0
 });
 
 
 app.post('/register', async (req, res) => {
-    const { name, email, password } = req.body;
+    const { name, email, password, confirm_password } = req.body;
 
     try {
-        if (name === undefined || email === undefined || password === undefined) {
+        if (name === undefined || email === undefined || password === undefined || confirm_password === undefined) {
             throw new Error('Invalid request body. Make sure all required fields are provided.');
         }
 
         const connection = await pool.promise().getConnection();
 
 
-        const [existingUsers] = await connection.execute('SELECT * FROM users WHERE email = ?', [email]);
+        const [existingUsers] = await connection.execute('SELECT * FROM UserAccount WHERE email = ?', [email]);
+
+        if (!email.match(/@gmail\.com$/)) {
+            return res.status(400).send('Only Gmail accounts are allowed for registration.');
+        }
 
         if (existingUsers.length > 0) {
-
             res.status(409).json({ success: false, message: 'User already exists. Please sign in.' });
+
+
             connection.release();
             return;
         }
 
 
-        const [result] = await connection.execute('INSERT INTO users (name, email, password) VALUES (?, ?, ?)', [name, email, password]);
+        const [result] = await connection.execute('INSERT INTO UserAccount (name, email, password, confirm_password) VALUES (?, ?, ?, ?)', [name, email, password, confirm_password]);
         connection.release();
 
         res.redirect('/index.html');
@@ -64,7 +70,7 @@ app.post('/login', async (req, res) => {
         const connection = await pool.promise().getConnection();
 
 
-        const [rows] = await connection.execute('SELECT * FROM users WHERE email = ?', [email]);
+        const [rows] = await connection.execute('SELECT * FROM UserAccount WHERE email = ?', [email]);
 
         connection.release();
 
@@ -91,7 +97,22 @@ app.post('/login', async (req, res) => {
     }
 });
 
-// Serve static files from the 'public' directory
+app.post('/forgot-password', async (req, res) => {
+    const { email } = req.body;
+
+    try {
+        const connection = await pool.promise().getConnection();
+
+
+        const [rows] = await connection.execute('SELECT * FROM UserAccount WHERE email = ?', [email]);
+
+        connection.release();
+
+    } catch (error) {
+        console.error("Email not match:", error);
+        res.status(500).json({ success: false, message: `Error signing in user: ${error.message}` });
+    }
+});
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Define routes for HTML files
