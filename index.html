@@ -6,20 +6,24 @@
     <title>Linux Learning Platform</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
         body {
             font-family: Arial, sans-serif;
-            /* background-color: #c0d6ec; */
             background-image: url('https://wallpaper-house.com/data/out/7/wallpaper2you_179945.jpg');
             text-align: center;
             padding: 80px;
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size:auto;
+            
         }
 
         h1 {
-            color: #1f11a4;
-         padding-top: 40px;
-            font-family:serif;
+            color: #2816d1;
+            padding-top: 40px;
+            font-family: serif;
             font-weight: bold;
             font-size: 75px;
         }
@@ -30,8 +34,8 @@
 
         a {
             display: inline-block;
-            margin: 75px;
-            padding: 25px 35px;
+            margin: 55px;
+            padding: 20px 35px;
             font-size: 47px;
             font-weight: bold;
             text-decoration: solid;
@@ -43,14 +47,27 @@
         a:hover {
             background-color: #9bc6f0;
         }
-
-        #datetime {
-            font-size: 14px;
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            color: #fafafa;
+        
+        /* Progress chart styles */
+        .progress-chart {
+            width: 350px;
+            height: 350px;
+            margin-left: 1200px; /* Push to the right */
         }
+
+        .progress-circle {
+            fill: none;
+            stroke: #155bbe; /* Change this color as needed */
+            stroke-width:5px;
+        }
+        
+        .progress-circle-background {
+            fill: none;
+            stroke: #e6e6e6; /* Change this color as needed */
+            stroke-width: 12px;
+        }
+
+        
     </style>    
 </head>
 <body>
@@ -59,34 +76,68 @@
 
 
 <div class="content-links">
-    <a href="tutorials.html">Tutorials</a>
-    <a href="quizzes.html">Quizzes</a>
+    <a href="/tutorials.html">Tutorials</a>
+    <a href="/quizzes.html">Quizzes</a>
 </div>
 
 <div id="datetime"></div>
 
+<!-- Progress chart -->
+<svg class="progress-chart" viewBox="0 0 36 36">
+  <path class="progress-circle-background"
+        d="M18 2.0845
+           a 15.9155 15.9155 0 0 1 0 31.831
+           a 15.9155 15.9155 0 0 1 0 -31.831"
+  />
+  <path class="progress-circle"
+        stroke-dasharray="0, 100"
+        d="M18 2.0845
+           a 15.9155 15.9155 0 0 1 0 31.831
+           a 15.9155 15.9155 0 0 1 0 -31.831"
+  />
+</svg>
+
 <script>
+   
 
-        function updateDateTime() {
-            const now = new Date();
-            const options = { timeZone: 'Asia/Kolkata', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
-            const formattedDate = now.toLocaleDateString('en-IN', options);
-            document.getElementById('datetime').textContent = formattedDate;
+    // Function to set username
+    function setUsername() {
+        const storedUsername = localStorage.getItem('username');
+        const usernameSpan = document.getElementById('usernameSpan');
+
+        if (storedUsername) {
+            usernameSpan.textContent = storedUsername;
         }
+    }
 
-        function setUsername() {
-            const storedUsername = localStorage.getItem('username');
-            const usernameSpan = document.getElementById('usernameSpan');
+     // Function to update progress chart
+    function updateProgressChart(progress) {
+        const circle = document.querySelector('.progress-circle');
+        const radius = circle.getAttribute('r');
+        const circumference = 2 * Math.PI * radius;
+        const offset = circumference * (1 - progress / 100);
+        
+        circle.style.strokeDasharray = `${circumference}, ${circumference}`;
+        circle.style.strokeDashoffset = offset;
+    }
 
-            if (storedUsername) {
-                usernameSpan.textContent = storedUsername;
-            }
+    // Function to update progress based on quiz submission
+    function updateProgressOnQuizSubmission() {
+        // Assuming the user submits a quiz
+        const userSubmittedQuiz = true;
+        
+        if (userSubmittedQuiz) {
+            const progress = 11; // 11% progress
+            updateProgressChart(progress);
         }
+    }
 
-        updateDateTime();
-        setUsername();
-        setInterval(updateDateTime, 1000); // Update every second
-    </script>
+
+    // Call necessary functions
+   
+    setUsername();
+    updateProgressOnQuizSubmission();
+</script>
 
 </body>
 </html>
