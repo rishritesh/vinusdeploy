@@ -47,27 +47,37 @@
             opacity: 40x;
         }
 
-        #datetime {
-            font-size: 14px;
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            color: #fafafa;
-        }
+      
         #scoreContainer {
     display: inline-block;
-    margin-top: 40px; /* Adjust this to change the distance from the top */
-    margin-left: auto; /* Adjust this to change horizontal alignment */
-    margin-right: auto; /* Adjust this to change horizontal alignment */
+    margin-top: 40px; 
+    margin-left: auto; 
+    margin-right: auto; 
     padding: 15px;
     background-color: #4b4a4a;
     color: #ffffff;
     font-size: 55px;
     font-weight: bold;
     border-radius: 40px;
-    position: relative; /* Use position property to adjust absolute positioning */
-    top: 180px; /* Adjust this to change vertical positioning */
+    position: relative; 
+    top: 180px; 
 }
+
+
+@keyframes firecrackers {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px) rotate(10deg); }
+            100% { transform: translateY(0); }
+        }
+
+        .firecracker {
+            width: 20px;
+            height: 20px;
+            background-color: #f00;
+            border-radius: 50%;
+            position: absolute;
+            animation: firecrackers 0.5s ease-in-out infinite;
+        }
 
      
     </style>    
@@ -97,9 +107,6 @@
         document.getElementById('datetime').textContent = formattedDate;
 
     }
-
-    updateDateTime();
-    setInterval(updateDateTime, 1000); // Update every second
 </script>
 
 </body>
