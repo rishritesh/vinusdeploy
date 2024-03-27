@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expression wth grep</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+      .correct {
+            color: green;
+        }
+
+        .wrong {
+            color: red;}
+    body {
+        background-color: #9bc6f0;
+        padding: 50px;
+    }
+
+    .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+    }
+
+    h1 {
+        color: #88bef5;
+        font-weight: bolder;
+        padding: 20px;
+        text-align: center;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    
+    }
+    p{
+        font-weight: bold;
+    }
+
+    input[type="radio"] {
+        margin-bottom: 20px;
+    }
+
+    button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #resultMessage {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+
+.vinus{
+    margin: 35px;
+          padding: 25px 35px;
+          font-size: 22px;
+          font-weight: bold;
+          text-decoration: solid;
+          background-color: #000000;
+          color: #ffffff;
+          border-radius: 40px;
+          text-align: center;
+          position:relative;
+          margin-left: 860px;
+}
+#timer {
+    background-color: #c2defa;
+    color: #1d1c1c;
+    font-weight: 900;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+  </style>
+</head>
+<body>
+
+    <body>
+
+        <div class="container">
+            <h1 class="text-center">Expression with grep</h1>
+            <div id="timer"></div> <!-- Timer element added -->
+        <section class="question" id="question1">
+            <p>Question 1: How do you perform a case-insensitive search using grep?</p>
+            <label><input type="radio" name="q1" value="-s"> -s</label>
+            <label><input type="radio" name="q1" value="-c"> -c</label>
+            <label><input type="radio" name="q1" value="-i"> -i</label>
+            <label><input type="radio" name="q1" value="-r"> -r</label>
+        </section>
+    
+        <section class="question" id="question2">
+            <p>Question 2: Which grep option is used to count the number of lines that match a pattern?</p>
+            <label><input type="radio" name="q2" value="-l"> -l</label>
+            <label><input type="radio" name="q2" value="-c"> -c</label>
+            <label><input type="radio" name="q2" value="-n"> -n</label>
+            <label><input type="radio" name="q2" value="-w"> -w</label>
+        </section>
+    
+        <section class="question" id="question3">
+            <p>Question 3: What grep command would you use to find lines that start with the word "start"?</p>
+            <label><input type="radio" name="q3" value="grep '^start' filename"> grep '^start' filename</label>
+            <label><input type="radio" name="q3" value="grep 'start$' filename"> grep 'start$' filename</label>
+            <label><input type="radio" name="q3" value="grep -w 'start' filename"> grep -w 'start' filename</label>
+            <label><input type="radio" name="q3" value="grep 'start' filename"> grep 'start' filename</label>
+        </section>
+    
+        <section class="question" id="question4">
+            <p>Question 4: To match any single character in a pattern, which symbol would you use?</p>
+            <label><input type="radio" name="q4" value="*"> *</label>
+            <label><input type="radio" name="q4" value="."> .</label>
+            <label><input type="radio" name="q4" value="+"> +</label>
+            <label><input type="radio" name="q4" value="?"> ?</label>
+        </section>
+    
+        <section class="question" id="question5">
+            <p>Question 5: Which grep option is used to invert the match, showing lines that do not contain a specific pattern?</p>
+            <label><input type="radio" name="q5" value="-v"> -v</label>
+            <label><input type="radio" name="q5" value="-r"> -r</label>
+            <label><input type="radio" name="q5" value="-i"> -i</label>
+            <label><input type="radio" name="q5" value="-n"> -n</label>
+        </section>
+    
+        <section class="question" id="question6">
+            <p>Question 6:How do you search for lines containing either "apple" or "orange" in a file using grep?</p>
+            <label><input type="radio" name="q6" value="grep 'apple & orange' filename"> grep 'apple & orange' filename</label>
+            <label><input type="radio" name="q6" value="grep 'apple | orange' filename"> grep 'apple | orange' filename</label>
+            <label><input type="radio" name="q6" value="grep 'apple\|orange' filename"> grep 'apple\|orange' filename</label>
+            <label><input type="radio" name="q6" value="grep 'apple & orange' filename"> grep 'apple & orange' filename</label>
+        </section>
+    
+        <section class="question" id="question7">
+            <p>Question 7: Which grep option is used to display line numbers along with matching lines?</p>
+            <label><input type="radio" name="q7" value="-l"> -l</label>
+            <label><input type="radio" name="q7" value="-n"> -n</label>
+            <label><input type="radio" name="q7" value="-v"> -v</label>
+            <label><input type="radio" name="q7" value="-c"> -c</label>
+        </section>
+    
+        <section class="question" id="question8">
+            <p>Question 8: What is the purpose of the caret (^) in a regular expression when used with grep?</p>
+            <label><input type="radio" name="q8" value="Matches the end of a line"> Matches the end of a line</label>
+            <label><input type="radio" name="q8" value="Indicates case-insensitive search"> Indicates case-insensitive search</label>
+            <label><input type="radio" name="q8" value="Matches the beginning of a line"> Matches the beginning of a line</label>
+            <label><input type="radio" name="q8" value="Represents any single character"> Represents any single character</label>
+        </section>
+    
+        <section class="question" id="question9">
+            <p>Question 9: How can you search for lines that contain a word starting with "abc" using grep?</p>
+            <label><input type="radio" name="q9" value="grep '\abc' filename"> grep '\abc' filename</label>
+            <label><input type="radio" name="q9" value="grep '^abc' filename"> grep '^abc' filename</label>
+            <label><input type="radio" name="q9" value="grep 'abc' filename"> grep 'abc' filename</label>
+            <label><input type="radio" name="q9" value="grep 'abc*' filename"> grep 'abc*' filename</label>
+        </section>
+    
+        <section class="question" id="question10">
+            <p>Question 10: What does the asterisk (*) represent in a regular expression when used with grep?</p>
+            <label><input type="radio" name="q10" value="Matches zero or one occurrence"> Matches zero or one occurrence</label>
+            <label><input type="radio" name="q10" value="Matches one or more occurrences">  Matches one or more occurrences</label>
+            <label><input type="radio" name="q10" value="Matches zero or more occurrences"> Matches zero or more occurrences</label>
+            <label><input type="radio" name="q10" value="Matches exactly one occurrence"> Matches exactly one occurrence</label>
+        </section>
+    
+    
+        <button id="submitBtn" >Submit</button>
+       
+        <div id="result"></div>
+    
+        <div class="button"></div>
+        <div id="datetime"></div>
+    
+<script>
+    var timeLeft;
+            var timerInterval;
+        
+            function startTimer() {
+                var startTime = localStorage.getItem('startTime');
+                var elapsedTime = Date.now() - startTime;
+                var totalTime = 600000; // 10 minutes in milliseconds
+                timeLeft = Math.max(totalTime - elapsedTime, 0);
+        
+                timerInterval = setInterval(function() {
+                    var minutes = Math.floor(timeLeft / 60000);
+                    var seconds = Math.floor((timeLeft % 60000) / 1000);
+        
+                    document.getElementById('timer').innerText = 'Time Left: ' + minutes + 'm ' + seconds + 's';
+        
+                    if (timeLeft <= 0) {
+                        clearInterval(timerInterval);
+                        alert('Ooops.. Time Up! Redirecting to dashboard.');
+                        window.location.href = 'index.html'; // Redirect to dashboard when time is up
+                    }
+        
+                    timeLeft -= 1000;
+                }, 1000);
+            }
+        
+            startTimer();
+            
+            window.addEventListener('beforeunload', function(event) {
+                localStorage.setItem('startTime', Date.now());
+            });
+        
+            document.getElementById('submitBtn').addEventListener('click', function () {
+                    if (validateAnswers()) {
+                        clearInterval(timerInterval); // Stop the timer when submitted
+                        checkAnswers();
+                    } else {
+                        alert('Please answer all questions before submitting.');
+                    }
+                });
+        
+                function validateAnswers() {
+                    var questions = document.querySelectorAll('.question');
+                    for (var i = 0; i < questions.length; i++) {
+                        var selectedAnswer = questions[i].querySelector('input:checked');
+                        if (!selectedAnswer) {
+                            return false; // Return false if any question is unanswered
+                        }
+                    }
+                    return true; // All questions have been answered
+                }
+
+
+function checkAnswers() {
+ var marks = 0;
+ marks += checkQuestion('question1', '-i');
+ marks += checkQuestion('question2', '-n');
+ marks += checkQuestion('question3', "grep -w 'start' filename");
+ marks += checkQuestion('question4', '.');
+ marks += checkQuestion('question5', '-v');
+ marks += checkQuestion('question6', "grep 'apple\\|orange' filename");
+ marks += checkQuestion('question7', '-n');
+ marks += checkQuestion('question8', 'Matches the beginning of a line');
+ marks += checkQuestion('question9', "grep '^abc' filename");
+ marks += checkQuestion('question10', 'Matches zero or more occurrences');
+ //  document.getElementById('result').innerText = `You got ${marks} marks out of 10`;
+return marks;
+      }
+
+      function checkQuestion(questionId, correctAnswer) {
+        var selectedAnswer = document.querySelector(`#${questionId} input:checked`);
+        var options = document.querySelectorAll(`#${questionId} input`);
+
+        options.forEach(function (option) {
+          option.parentElement.classList.remove('correct', 'wrong');
+
+          if (option.value === correctAnswer) {
+            option.parentElement.classList.add('correct');
+          }
+
+          if (option.checked && option.value !== correctAnswer) {
+            option.parentElement.classList.add('wrong');
+          }
+        });
+
+        return selectedAnswer && selectedAnswer.value === correctAnswer ? 1 : 0;
+      }
+
+      function submitQuiz(){
+        const score=checkAnswers();
+        window.location.href=`result_intro.html?score=${score}`
+        localStorage.setItem("7", true);
+      }
+</script>
+</div>
+<button class="vinus" onclick="submitQuiz()">Check Score</button>
+
+</body>
+</html>

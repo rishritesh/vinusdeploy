@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Learning Platform</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* background-color: #c0d6ec; */
+            background-image: url('https://wallpapers.com/images/hd/linux-os-symbol-tux-penguin-astral-o1p3a69fxxu9jpap.jpg');
+            text-align: center;
+            padding: 40px;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-weight:bolder;
+         padding-top: 40px;
+            font-family:serif;
+            font-weight: bold;
+            font-size: 75px;
+        }
+        
+        .content-links {
+            margin-top: 30px;
+        }
+       
+        a {
+            display: inline-block;
+            margin: 155px;
+            margin-top: 40px;
+            padding: 25px 35px;
+            font-size: 47px;
+            font-weight: bold;
+            text-decoration: solid;
+            background-color: #aa76d1;
+            color: #ffffff;
+            border-radius: 60px;
+        }
+
+        a:hover {
+            background-color: #ce9bf0;
+            opacity: 40x;
+        }
+
+      
+        #scoreContainer {
+    display: inline-block;
+    margin-top: 40px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    padding: 15px;
+    background-color: #4b4a4a;
+    color: #ffffff;
+    font-size: 55px;
+    font-weight: bold;
+    border-radius: 40px;
+    position: relative; 
+    top: 180px; 
+}
+
+
+@keyframes firecrackers {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px) rotate(10deg); }
+            100% { transform: translateY(0); }
+        }
+
+        .firecracker {
+            width: 20px;
+            height: 20px;
+            background-color: #f00;
+            border-radius: 50%;
+            position: absolute;
+            animation: firecrackers 0.5s ease-in-out infinite;
+        }
+
+     
+    </style>    
+</head>
+<body>
+                                                                                                       
+<h1>Congratulations for Completion your Quiz</h1>
+
+
+<div class="result-quiz">
+    <a href="index.html">Go to Dashboard</a>
+    <a href="quiz_intro.html">Re-attempt the Quiz</a>
+</div>
+
+<div id="datetime"></div>
+
+<script>
+
+    const urlParams=new URLSearchParams(window.location.search);
+    const score=urlParams.get('score');
+    document.write(`<div id="scoreContainer"><p>Your score is: ${score}</p></div>`);
+
+    function updateDateTime() {
+        const now = new Date();
+        const options = { timeZone: 'Asia/Kolkata', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+        const formattedDate = now.toLocaleDateString('en-IN', options);
+        document.getElementById('datetime').textContent = formattedDate;
+
+    }
+</script>
+
+</body>
+</html>

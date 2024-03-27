@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editors in Linux</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000000;
+            padding: 40px;
+            color: #64686c;
+        }
+        .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+    }
+
+        h1, h2, h3 {
+            font-weight: bold;
+            padding-top: 40px;
+            align-self: center;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: #131415; /* Blue color */
+            padding-top: 20px;
+            text-align: center;
+        
+        }
+
+        h2 {
+            font-size: 25px;
+            color: #0b0b0b;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: #3d3535;
+        }
+
+        p {
+            color: #2468a4;
+            font-size: 18px;
+        }
+
+        pre {
+            background-color: #abbfd6;
+            border-radius: 20px;
+            overflow-x: auto;
+            font-size: 15px;
+        }
+
+        code {
+            color: #d63384;
+           
+        }
+        .button{ 
+    padding-top: 40px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffffff;
+    padding: 4px;
+    border: #0b0b0b solid 4px;
+    border-radius: 4px;
+    text-align: center;
+background-color: #000000;
+margin-top: 30px;
+}
+a {
+          
+            margin: 35px;
+            padding: 25px 35px;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: solid;
+            background-color: #000000;
+            color: #ffffff;
+            border-radius: 40px;}
+.button-div{
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+a:hover {
+            background-color: #9bc6f0;}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <h1>Text Editors</h1>
+   <p>Text editors play a crucial role in Linux systems, providing a means to create, modify, and manage text-based files. There are various text editors available, each with its own set of features and functionalities. Understanding how to use these editors is essential for Linux users and administrators.
+</p>
+<h2>Common Text Editors</h2>
+<h3>1. Vim</h3>
+<p>Vim (Vi Improved) is a highly configurable and powerful text editor. It has two main modes: command mode for navigation and manipulation, and insert mode for actual text entry. Vim is known for its efficiency once mastered.</p>
+<h3>2. Nano</h3>
+<p>Nano is a simple and user-friendly text editor. It provides basic text editing capabilities and is suitable for users who prefer a straightforward interface. Nano is especially suitable for beginners.
+</p>
+<h3>3. Gedit</h3>
+<p>Gedit is the default text editor for the GNOME desktop environment. It offers a clean and intuitive graphical interface, making it easy for users who prefer a more graphical approach to text editing.
+</p>
+<h2>Text Editing Basics</h2>
+<h3>1. Opening and Creating Files</h3>
+<p>If you want to create a file using vim, you have to use the command:</p>
+<pre><code>vim filename</code></pre>
+<p>If you want to create a file using nano, you have to use the command:</p>
+<pre><code> nano filename</code></pre>
+<p>If you want to create a file using gedit, you have to use the command:</p>
+<pre><code>gedit filename</code></pre>
+<h3>Basic Editing Commands</h3>
+<p><strong>1. vim:</strong></p>
+<p><strong>Switch to insert mode:</strong> Press i</p>
+<p><strong>Delete a character:</strong> Press x</p>
+<p><strong>Undo:</strong> Press u</p>
+<p><strong>Redo:</strong> Press ctrl+r</p>
+
+<p><strong>2. nano:</strong></p>
+<p><strong>Save Changes:</strong> Press ctrl+o</p>
+<p><strong>Cut text:</strong> Press ctrl+k</p>
+<p><strong>Paste text:</strong> Press ctrl+u</p>
+<p><strong>Exit:</strong> Press ctrl+x</p>
+
+<p><strong>3. gedit:</strong></p>
+<p><strong>Cut Text:</strong> Press ctrl+x</p>
+<p><strong>Copy Text:</strong> Press ctrl+c</p>
+<p><strong>Paste Text:</strong> Press ctrl+v</p>
+<p><strong>Undo:</strong> Press ctrl+z</p>
+
+<h3>2. Searching and Replacing</h3>
+<p><strong>1. vim:</strong></p>
+<p><strong>Seacrh:</strong>  In command mode, type / followed by the search term.</p>
+<p><strong>Replace:</strong> In command mode, type :%s/old/new/g to replace all occurrences of "old" with "new".</p>
+
+<p><strong>2. nano:</strong></p>
+<p><strong>Search:</strong> Press ctrl+w</p>
+<p><strong>Replace:</strong> Press ctrl+ \, then Ctrl + r and enter the search and replace terms.
+</p>
+
+<p><strong>3. gedit:</strong></p>
+<p><strong>Search:</strong> Press ctrl+f and enter the search term</p>
+<p><strong>Replace:</strong> Press ctrl+ h and enter the search and replace terms.</p>
+
+<h3>3. Saving and Exit</h3>
+<p><strong>1. vim:</strong></p>
+<p><strong>Save changes:</strong> In CLI mode, type : w</p>
+<p><strong>Save and Exit:</strong> In CLI mode, type : wq</p>
+
+<p><strong>2. nano:</strong></p>
+<p><strong>Save changes:</strong> Press ctrl+o, Then press Enter</p>
+<p><strong>Exit:</strong> Press ctrl+x</p>
+
+<p><strong>3. gedit:</strong></p>
+<p><strong>Save Changes:</strong> Press ctrl+s</p>
+<p><strong>Exit:</strong> Click on the close button or use the menu.</p>
+
+<h2>Conclusion</h2>
+<p>Choosing the right text editor depends on personal preference and the specific needs of the user. Whether you prefer the efficiency of Vim, simplicity of Nano, extensibility of Emacs, or the graphical interface of Gedit, mastering a text editor is essential for efficient text-based tasks in Linux. Regular practice and exploration of advanced features will enhance your proficiency with your chosen text editor.
+</p>
+
+<div class="button">
+    <a class="button-quiz" href="quiz_vim_editing.html">Go to quiz</a></div>
+
+
+<div id="datetime"></div>
+
+<script>
+    function updateDateTime() {
+        const now = new Date();
+        const options = {
+            timeZone: 'UTC',
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric'
+        };
+        const formattedDate = now.toLocaleDateString('en-US', options);
+        document.getElementById('datetime').textContent = formattedDate;
+    }
+
+</script>
+</div>
+</body>
+
+</html>

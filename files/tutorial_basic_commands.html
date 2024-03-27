@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Basic Commands</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000000;
+            padding: 40px;
+            color: #64686c;
+        }
+        .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+    }
+
+        h1, h2, h3 {
+            font-weight: bold;
+            padding-top: 40px;
+            align-self: center;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: #060707; /* Blue color */
+            padding-top: 20px;
+            padding-bottom: 20px;
+            text-align: center;
+        
+        }
+
+        h2 {
+            font-size: 25px;
+            color: #0b0b0b;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: #000000;
+          
+        }
+
+        p {
+            color: #2468a4;
+            font-size: 18px;
+        }
+
+        pre {
+            background-color: #abbfd6;
+            border-radius: 20px;
+            overflow-x: auto;
+            font-size: 15px;
+        }
+
+        code {
+            color: #d63384;
+           
+        }
+        .button{ 
+    padding-top: 40px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffffff;
+    padding: 4px;
+    border: #0b0b0b solid 4px;
+    border-radius: 4px;
+    text-align: center;
+background-color: #000000;
+margin-top: 30px;
+}
+a {
+          
+            margin: 35px;
+            padding: 25px 35px;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: solid;
+            background-color: #000000;
+            color: #ffffff;
+            border-radius: 40px;}
+.button-div{
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+a:hover {
+            background-color: #9bc6f0;}
+       
+    </style>
+</head>
+
+<body>
+<div class="container">
+<h1>Linux Basic Commands</h1>
+<h2>1. whoami</h2>
+<p>The whoami command is used to display the effective user ID of the current user.</p><p> It prints the username associated with the current user's session.</p>
+<h2>2. ls</h2>
+<p>   It is used to list down the names and features of files and directories.</p>
+<pre>
+  <code> ls  </code>
+</pre>
+<h2>3. ll</h2>
+<p>  It is used to list the long information about files and directories in the system.</p>
+<pre>
+  <code> ls -l
+    ll  </code>
+</pre>
+<h2>4. cal </h2>
+<p> The cal command in Linux is used to display a calendar in the terminal. By default, it shows the current month's calendar. </p>
+<h2>5. date</h2>
+<p>
+  The date command in Linux is used to display the current date and time or to set the system date and time. Here's an overview of the date command:
+  
+  </p>
+<h2>6. pwd</h2>
+<p>The pwd command in Linux stands for "Print Working Directory." It is used to display the current working directory, which is the directory you are currently located in within the file system.</p>
+
+
+
+<h2>7.touch</h2>
+<p>  It is used to create, modify and change a blank file.</p>
+<pre>
+  <code> touch filename.txt  </code>
+</pre>
+
+ <h2>8. mkdir</h2>
+<p> It is used to make a directory(in Linux) or folder(in windows)</p>
+<pre>
+  <code> mkdir dirname </code>
+</pre>
+
+
+
+<h2>9. cat</h2>
+<p>  It is used to see the data added in a file. When we use “cat (file name)”, then it adds data in the file.
+</p>
+<pre>
+  <code> cat filename  </code>
+</pre>
+<h3>a). Create a New File or Overwrite Existing File:</h3>
+<pre>
+  <code>cat > newfile</code>
+</pre>
+<h3>b). Append Contents to an Existing File:</h3>
+<pre><code>cat >> existingfile_name
+</code></pre>
+
+<h2>10.head</h2>
+<p>  It is used to filter the head lines to a particular number of lines (for e.g. – if we want to see data of starting 4 lines, then we use:  head –n 20 (file name).</p>
+<pre>
+  <code> head -n 20 filename  </code>
+</pre>
+<h2>11. tail</h2>
+<p>  It is used to filter the tail lines to a particular number of lines (for e.g. – if
+  we want to see data of starting 4 lines, then we use:  tail –n 20 (file name)</p>
+<pre>
+  <code> tail -n 20 filename </code>
+</pre>
+
+<h2>12. less</h2>
+<p>  This command is used to read the contents of a text file’s one page (one screen) at a time.</p>
+<pre>
+  <code> less filename </code>
+</pre>
+<h2>13. more</h2>
+<p>  This command is used to read the contents of a text file’s one page. At the last page there is a “more” option which appends the data up to the next page.</p>
+<pre>
+  <code> more filename  </code>
+</pre>
+<h2>14. echo</h2>
+<p> Echo command is used to print the text or strings which are passed as
+  arguments on the command line. It is mainly used in scripting.</p>
+<pre>
+  <code> echo "Hello, World!"  </code>
+</pre>
+<h2>15. rm</h2>
+<p>  The rm command is used to remove objects such as files, symbolic links and so on from the file system while the rm -r command is used to delete an entire directory.</p>
+<pre>
+  <code> rm filename
+         rm -r directory 
+         rm *.txt </code>
+</pre>
+<p>This command removes all files in the current directory with a .txt extension.
+</p>
+<h2>16. cp</h2>
+<p>  The cp command is used for copying files from one location to another.</p>
+<pre>
+  <code> cp oldfile.txt newfile.txt  </code>
+</pre>
+<h2>17. mv</h2>
+<p>   The mv command moves files and directories from one directory to another or renames a file or directory. If you move a file or directory to a new directory, it retains the base file name.</p>
+<pre>
+  <code> mv oldfile.txt newfile.txt  </code>
+</pre>
+
+<h2>18. useradd</h2>
+<p>  useradd is a Linux command for creating a new user. It requires various options to add and set up an active user account.</p>
+<pre>
+  <code> sudo useradd john  </code>
+</pre>
+<h2>22. userdel</h2>
+<p> The userdel command deletes an existing user. It does not delete the files in the user's home directory unless you supply the -r option. </p>
+<pre>
+  <code> sudo userdel john  </code>
+</pre>
+<h2>23. usermod</h2>
+<p>  usermod command or modify user is a command in Linux that is used to change the properties of a user in Linux through the command line.</p>
+<pre>
+  <code> sudo usermod -l newname oldname  </code>
+</pre>
+<h2>24. groupadd</h2>
+<p> The groupadd command creates a new group account using the values specified on the command line plus the default values from the system.
+</p>
+<pre>
+  <code> sudo groupadd mygroup  </code>
+</pre>
+<h2>25. groupdel</h2>
+<p>The groupdel command modifies the system account files, deleting all entries that refer to GROUP. </p>
+<pre>
+  <code> sudo groupdel mygroup  </code>
+</pre>
+
+<h2>26. su</h2>
+<p> The su command changes user credentials to those of the root user or to the user specified by the Name parameter</p>
+<pre>
+  <code> su username</code>
+</pre>
+<h2>27. sudo</h2>
+<p> The sudo command allows you to run programs with the security privileges of another user.</p>
+<pre>
+  <code> sudo su  </code>
+</pre>
+
+<h2>28. which</h2>
+<p> It is a command which is used to locate the executable file associated with the given command by searching it in the path environment variable.
+</p>
+<pre>
+  <code> which ls </code>
+</pre>
+<h2>29. help</h2>
+<p>  The help command provides information on built-in commands. </p>
+<pre>
+  <code> [command] --help </code>
+</pre>
+
+<h2>30. man</h2>
+<p>  man command in Linux is used to display the user manual of any command that we can run on the terminal. It provides a detailed view of the command.</p>
+<pre>
+  <code> man chmod[command] </code>
+</pre>
+
+<h2>31. locate</h2>
+<p> It is a utility which serves to find files on filesystems. It searches through a pre-built database of files.
+</p>
+<pre>
+  <code> locate filename </code>
+</pre>
+<h2>32. find</h2>
+<p> It can be used to find files and directories and perform subsequent operations on them. It supports searching by file, folder, name, creation date, modification date, owner and permissions.</p>
+<pre>
+  <code>find /path/to/search -name filename.txt  </code>
+</pre>
+<h2>33. du</h2>
+<p> The du (disk usage) command measures the disk space occupied by files or directories. By default, it measures the current directory and all its subdirectories.
+</p>
+<pre>
+  <code> du -h /path/to/directory  </code>
+</pre>
+
+
+<h2>34. uptime</h2>
+<p>  It tells how long the Linux system has been running.</p>
+<pre>
+  <code>uptime  </code>
+</pre>
+<h2>35. last</h2>
+<p>  The last command in Linux is used to display the list of all the users logged in and out since the file `/var/log/wtmp` was created.</p>
+<pre>
+  <code> last username </code>
+</pre>
+
+<h2>36. reboot</h2>
+<p> reboot command is used to restart or reboot the system. In a Linux system administration, there comes a need to restart the server after the completion of some network and other major updates.</p>
+<pre>
+  <code> reboot [OPTIONS]  </code>
+</pre>
+
+
+<h2>37. lscpu</h2>
+<p>  It is used to get detailed information about the CPU installed on your system.</p>
+<pre>
+  <code>lscpu </code>
+</pre>
+
+<h2>38. lsblk</h2>
+<p> lsblk lists information about all available or the specified block devices. The lsblk command reads the sysfs filesystem and udev db to gather information.</p>
+<pre>
+  <code> lsblk [OPTIONS] </code>
+</pre>
+<div class="button">
+  <a class="button-quiz" href="quiz_linux_basics.html">Go to quiz</a></div>
+<div id="datetime"></div>
+
+<script>
+    function updateDateTime() {
+        const now = new Date();
+        const options = {
+            timeZone: 'UTC',
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric'
+        };
+        const formattedDate = now.toLocaleDateString('en-US', options);
+        document.getElementById('datetime').textContent = formattedDate;
+    }
+
+</script>
+</div>
+</body>
+
+</html>

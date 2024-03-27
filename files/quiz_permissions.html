@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Permissions and Ownership</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+      .correct {
+            color: green;
+        }
+
+        .wrong {
+            color: red;}
+    body {
+        background-color: #9bc6f0;
+        padding: 50px;
+    }
+
+    .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+        padding-left: 70px;
+    }
+
+    h1 {
+        color: #88bef5;
+        font-weight: bolder;
+        padding: 20px;
+        text-align: center;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    
+    }
+    p{
+        font-weight: bold;
+    }
+
+    input[type="radio"] {
+        margin-bottom: 20px;
+    }
+
+    button{
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #resultMessage {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+
+.vinus{
+    margin: 35px;
+          padding: 25px 35px;
+          font-size: 22px;
+          font-weight: bold;
+          text-decoration: solid;
+          background-color: #000000;
+          color: #ffffff;
+          border-radius: 40px;
+          text-align: center;
+          position:relative;
+          margin-left: 860px;
+}
+#timer {
+    background-color: #c2defa;
+    color: #1d1c1c;
+    font-weight: 900;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+
+  </style>
+</head>
+<body>
+
+    <body>
+
+        <div class="container">
+            <h1 class="text-center">Permissions and Ownership</h1>
+            <div id="timer"></div> <!-- Timer element added -->
+        <section class="question" id="question1">
+            <p>Question 1: What command is used to display the current file permissions in Linux?</p>
+            <label><input type="radio" name="q1" value="showperms"> showperms</label>
+            <label><input type="radio" name="q1" value="ls -l"> ls -l</label>
+            <label><input type="radio" name="q1" value="permissions"> permissions</label>
+            <label><input type="radio" name="q1" value="filestat"> filestat</label>
+        </section>
+    
+        <section class="question" id="question2">
+            <p>Question 2: In the output of ls -l, what does the first character in the file permissions field represent?</p>
+            <label><input type="radio" name="q2" value="File type"> File type</label>
+            <label><input type="radio" name="q2" value="Owner's execute permission"> Owner's execute permission</label>
+            <label><input type="radio" name="q2" value="Group's write permission"> Group's write permission</label>
+            <label><input type="radio" name="q2" value="Others' read permission"> Others' read permission</label>
+        </section>
+    
+        <section class="question" id="question3">
+            <p>Question 3: To change the owner of a file, you can use the command:</p>
+            <label><input type="radio" name="q3" value="chown"> chown</label>
+            <label><input type="radio" name="q3" value="chmod"> chmod</label>
+            <label><input type="radio" name="q3" value="chgrp"> chgrp</label>
+            <label><input type="radio" name="q3" value="chuser"> chuser</label>
+        </section>
+    
+        <section class="question" id="question4">
+            <p>Question 4: To add execute permission for the owner of a file, you would use the command:</p>
+            <label><input type="radio" name="q4" value="chmod u+x file.txt"> chmod u+x file.txt</label>
+            <label><input type="radio" name="q4" value="chmod o+x file.txt"> chmod o+x file.txt</label>
+            <label><input type="radio" name="q4" value="chmod g+x file.txt"> chmod g+x file.txt</label>
+            <label><input type="radio" name="q4" value="chmod a+x file.txt"> chmod a+x file.txt</label>
+        </section>
+    
+        <section class="question" id="question5">
+            <p>Question 5: Which permission is represented by the letter 'r' in the file permission field?</p>
+            <label><input type="radio" name="q5" value="read"> read</label>
+            <label><input type="radio" name="q5" value="write"> write</label>
+            <label><input type="radio" name="q5" value="execute"> execute</label>
+            <label><input type="radio" name="q5" value="rename"> rename</label>
+        </section>
+    
+        <section class="question" id="question6">
+            <p>Question 6: What is the octal value for the permission set rw-r--r--?</p>
+            <label><input type="radio" name="q6" value="644"> 644</label>
+            <label><input type="radio" name="q6" value="744"> 744</label>
+            <label><input type="radio" name="q6" value="755"> 755</label>
+            <label><input type="radio" name="q6" value="666"> 666</label>
+        </section>
+    
+        <section class="question" id="question7">
+            <p>Question 7: To remove read and write permissions for the group on a file, you would use the command:</p>
+            <label><input type="radio" name="q7" value="chmod g-rw file.txt"> chmod g-rw file.txt</label>
+            <label><input type="radio" name="q7" value="chmod g+x file.txt"> chmod g+x file.txt</label>
+            <label><input type="radio" name="q7" value="chmod g-r file.txt"> chmod g-r file.txt</label>
+            <label><input type="radio" name="q7" value="chmod g-rwx file.txt"> chmod g-rwx file.txt</label>
+        </section>
+    
+        <section class="question" id="question8">
+            <p>Question 8: The command chmod 751 file.txt would set the file permissions to:</p>
+            <label><input type="radio" name="q8" value="rwxr-x--x"> rwxr-x--x</label>
+            <label><input type="radio" name="q8" value="r-xr-x--x"> r-xr-x--x</label>
+            <label><input type="radio" name="q8" value="rwxr-xr--"> rwxr-xr--</label>
+            <label><input type="radio" name="q8" value="rwx--x--x"> rwx--x--x</label>
+        </section>
+    
+        <section class="question" id="question9">
+            <p>Question 9: What is the difference between 777 and a=rwx in file permissions</p>
+            <label><input type="radio" name="q9" value="No Difference, just different in symbolic and numeric representation"> No Difference, just different in symbolic and numeric representation</label>
+            <label><input type="radio" name="q9" value="Give permission of read, write and execute to user only"> Give permission of read, write and execute to user only</label>
+            <label><input type="radio" name="q9" value="Gives all permissions to group and user"> Gives all permissions to group and user</label>
+            <label><input type="radio" name="q9" value="Snatch all permissions from all"> Snatch all permissions from all</label>
+        </section>
+    
+        <section class="question" id="question10">
+            <p>Question 10: To add both read and write permissions for the owner and the group on a file, you would use the command:</p>
+            <label><input type="radio" name="q10" value="chmod ug+rw file.txt"> chmod ug+rw file.txt</label>
+            <label><input type="radio" name="q10" value="chmod u=rw,g=rw file.txt">  chmod u=rw,g=rw file.txt</label>
+            <label><input type="radio" name="q10" value="chmod u+rw,g+rw file.txt"> chmod u+rw,g+rw file.txt</label>
+            <label><input type="radio" name="q10" value="chmod a+rw file.txt"> chmod a+rw file.txt</label>
+        </section>
+        <button id="submitBtn" >Submit</button>
+        
+        <div id="result"></div>
+    
+        <div class="button"></div>
+        <div id="datetime"></div>
+         
+<script>
+     var timeLeft;
+            var timerInterval;
+        
+            function startTimer() {
+                var startTime = localStorage.getItem('startTime');
+                var elapsedTime = Date.now() - startTime;
+                var totalTime = 600000; // 10 minutes in milliseconds
+                timeLeft = Math.max(totalTime - elapsedTime, 0);
+        
+                timerInterval = setInterval(function() {
+                    var minutes = Math.floor(timeLeft / 60000);
+                    var seconds = Math.floor((timeLeft % 60000) / 1000);
+        
+                    document.getElementById('timer').innerText = 'Time Left: ' + minutes + 'm ' + seconds + 's';
+        
+                    if (timeLeft <= 0) {
+                        clearInterval(timerInterval);
+                        alert('Ooops.. Time Up! Redirecting to dashboard.');
+                        window.location.href = 'index.html'; // Redirect to dashboard when time is up
+                    }
+        
+                    timeLeft -= 1000;
+                }, 1000);
+            }
+        
+            startTimer();
+            
+            window.addEventListener('beforeunload', function(event) {
+                localStorage.setItem('startTime', Date.now());
+            });
+        
+            document.getElementById('submitBtn').addEventListener('click', function () {
+                    if (validateAnswers()) {
+                        clearInterval(timerInterval); // Stop the timer when submitted
+                        checkAnswers();
+                    } else {
+                        alert('Please answer all questions before submitting.');
+                    }
+                });
+        
+                function validateAnswers() {
+                    var questions = document.querySelectorAll('.question');
+                    for (var i = 0; i < questions.length; i++) {
+                        var selectedAnswer = questions[i].querySelector('input:checked');
+                        if (!selectedAnswer) {
+                            return false; // Return false if any question is unanswered
+                        }
+                    }
+                    return true; // All questions have been answered
+                }
+
+
+
+function checkAnswers() {
+ var marks = 0;
+ marks += checkQuestion('question1', 'ls -l');
+ marks += checkQuestion('question2', 'File type');
+ marks += checkQuestion('question3', "chown");
+ marks += checkQuestion('question4', 'chmod u+x file.txt');
+ marks += checkQuestion('question5', 'read');
+ marks += checkQuestion('question6', '644');
+ marks += checkQuestion('question7', 'chmod g-rw file.txt');
+ marks += checkQuestion('question8', 'rwxr-x--x');
+ marks += checkQuestion('question9', "No Difference, just different in symbolic and numeric representation");
+ marks += checkQuestion('question10', 'chmod u+rw,g+rw file.txt');
+ 
+ //  document.getElementById('result').innerText = `You got ${marks} marks out of 10`;
+return marks;
+      }
+
+      
+
+
+     
+      function checkQuestion(questionId, correctAnswer) {
+        var selectedAnswer = document.querySelector(`#${questionId} input:checked`);
+        var options = document.querySelectorAll(`#${questionId} input`);
+
+        options.forEach(function (option) {
+          option.parentElement.classList.remove('correct', 'wrong');
+
+          if (option.value === correctAnswer) {
+            option.parentElement.classList.add('correct');
+          }
+
+          if (option.checked && option.value !== correctAnswer) {
+            option.parentElement.classList.add('wrong');
+          }
+        });
+
+        return selectedAnswer && selectedAnswer.value === correctAnswer ? 1 : 0;
+      }
+
+      function submitQuiz(){
+        const score=checkAnswers();
+        window.location.href=`result_intro.html?score=${score}`
+        localStorage.setItem("4", true);
+      }
+</script>
+</div>
+<button class="vinus" onclick="submitQuiz()">Check Score</button>
+</body>
+</html>
