@@ -64,7 +64,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //     const { name, email, password, confirm_password } = req.body;
 
 
-    console.log(email)
+    //console.log(email)
 
 //     try {
 //         if (name === undefined || email === undefined || password === undefined || confirm_password === undefined) {
@@ -109,52 +109,101 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+app.post('/register', async (req, res) => {
+    const { name, email, password, confirm_password } = req.body;
 
 try {
     if (name === undefined || email === undefined || password === undefined || confirm_password === undefined) {
         throw new Error('Invalid request body. Make sure all required fields are provided.');
     }
 
-    const client = await Pool.connect();
+    // Define an async function to wrap your code
+    async function signUpUser() {
+        const client = await Pool.connect();
 
-    const existingUsersQuery = 'SELECT * FROM useraccount WHERE email = $1';
-    const { rows: existingUsers } = await client.query(existingUsersQuery, [email]);
+        const existingUsersQuery = 'SELECT * FROM useraccount WHERE email = $1';
+        const { rows: existingUsers } = await client.query(existingUsersQuery, [email]);
 
-    console.log(existingUsers);
-    if (!email.match(/@gmail\.com$/)) {
-        return res.status(400).send('Only Gmail accounts are allowed for registration.');
-    }
+        console.log(existingUsers);
+        if (!email.match(/@gmail\.com$/)) {
+            return res.status(400).send('Only Gmail accounts are allowed for registration.');
+        }
 
-    if (existingUsers.length > 0) {
-        res.status(409).json({ success: false, message: 'User already exists. Please sign in.' });
+        if (existingUsers.length > 0) {
+            res.status(409).json({ success: false, message: 'User already exists. Please sign in.' });
+            client.release();
+            return;
+        }
+
+        const insertUserQuery = 'INSERT INTO useraccount (name, email, password, confirm_password) VALUES ($1, $2, $3, $4)';
+        const insertUserValues = [name, email, password, confirm_password];
+        await client.query(insertUserQuery, insertUserValues);
+
         client.release();
-        return;
+
+        res.redirect('/index.html');
     }
 
-    const insertUserQuery = 'INSERT INTO useraccount (name, email, password, confirm_password) VALUES ($1, $2, $3, $4)';
-    const insertUserValues = [name, email, password, confirm_password];
-    await client.query(insertUserQuery, insertUserValues);
-
-    client.release();
-
-    res.redirect('/index.html');
-    return;
+    // Call the async function
+    signUpUser().catch(error => {
+        console.error("Error signing up user:", error);
+        res.status(500).json({ success: false, message: `Error signing up user: ${error.message}` });
+    });
 } catch (error) {
     console.error("Error signing up user:", error);
     res.status(500).json({ success: false, message: `Error signing up user: ${error.message}` });
 }
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// try {
+//     if (name === undefined || email === undefined || password === undefined || confirm_password === undefined) {
+//         throw new Error('Invalid request body. Make sure all required fields are provided.');
+//     }
+
+//     const client = await Pool.connect();
+
+//     const existingUsersQuery = 'SELECT * FROM useraccount WHERE email = $1';
+//     const { rows: existingUsers } = await client.query(existingUsersQuery, [email]);
+
+//     console.log(existingUsers);
+//     if (!email.match(/@gmail\.com$/)) {
+//         return res.status(400).send('Only Gmail accounts are allowed for registration.');
+//     }
+
+//     if (existingUsers.length > 0) {
+//         res.status(409).json({ success: false, message: 'User already exists. Please sign in.' });
+//         client.release();
+//         return;
+//     }
+
+//     const insertUserQuery = 'INSERT INTO useraccount (name, email, password, confirm_password) VALUES ($1, $2, $3, $4)';
+//     const insertUserValues = [name, email, password, confirm_password];
+//     await client.query(insertUserQuery, insertUserValues);
+
+//     client.release();
+
+//     res.redirect('/index.html');
+//     return;
+// } catch (error) {
+//     console.error("Error signing up user:", error);
+//     res.status(500).json({ success: false, message: `Error signing up user: ${error.message}` });
+// }
  
 
 
