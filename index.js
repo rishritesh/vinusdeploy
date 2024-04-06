@@ -121,7 +121,7 @@ try {
 
     // Define an async function to wrap your code
     async function signUpUser() {
-        const client = await Pool.connect();
+        const client = await pool.connect();
 
         const existingUsersQuery = 'SELECT * FROM useraccount WHERE email = $1';
         const { rows: existingUsers } = await client.query(existingUsersQuery, [email]);
