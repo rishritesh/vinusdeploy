@@ -2,14 +2,17 @@ const express = require('express');
 const { Pool } = require('pg');                                                                       
 const bodyParser = require('body-parser');
 const path = require('path');
+require('dotenv').config();
 
 
 const app = express();
-const port = 3000;
+// const port = 3000;
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+
 
 
 // const pool = mysql.createPool({
@@ -45,8 +48,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //     port: 5432,
 //   });
 
+
+//configuration for vercel
   const pool = new Pool({
-    
+    connectionString: process.env.POSTGRES_URL ,
   });
 
 
@@ -102,12 +107,27 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //         res.status(500).json({ success: false, message: `Error signing up user: ${error.message}` });
 //     }
 // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 try {
     if (name === undefined || email === undefined || password === undefined || confirm_password === undefined) {
         throw new Error('Invalid request body. Make sure all required fields are provided.');
     }
 
-    const client = await pool.connect();
+    const client = await Pool.connect();
 
     const existingUsersQuery = 'SELECT * FROM useraccount WHERE email = $1';
     const { rows: existingUsers } = await client.query(existingUsersQuery, [email]);
@@ -403,7 +423,7 @@ app.get('/vinus.jpg', (req, res) => {
 
 
 
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
