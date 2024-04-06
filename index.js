@@ -254,7 +254,7 @@ try {
 app.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
-    console.log(email,password);
+    console.log(email,password,"working inside login");
 
     try {
         const client = await pool.connect();

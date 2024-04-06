@@ -222,7 +222,8 @@
 
         <!-- login code -->
         <div class="form-wrapper login active">
-            <form action="http://localhost:3000/login" method="post" onsubmit="return validatePassword()">
+            <form action="/login" method="post" onsubmit="return validatePassword()">
+               <!-- <form action="http://localhost:3000/login" method="post" onsubmit="return validatePassword()">-->
                 <h2>Login form</h2>
 
                 <div class="input-box">
@@ -254,7 +255,7 @@
         <!-- rejistration code -->
 
         <div class="form-wrapper register">
-            <form action="http://localhost:3000/register" method="post">
+            <form action="/register" method="post">
                 <h2>Registration</h2>
                 <div class="input-box">
                     <span class="icon">
@@ -301,7 +302,7 @@
         <!-- forget password -->
 
         <div class="form-wrapper forgot-password">
-            <form action="http://localhost:3000/forgot-password" method="post">
+            <form action="/forgot-password" method="post">
                 <h2>Forgot Password</h2>
                 <span>Enter Registered email</span>
                 <div class="input-box text-center">
