@@ -50,8 +50,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //configuration for vercel
   const pool = new Pool({
-    connectionString: process.env.POSTGRES_URL ,
+    connectionString: process.env.POSTGRES_URL + "?sslmode=require",
   });
+
+  console.log(process.env.POSTGRES_URL)
 
 
 // import { sql } from '@vercel/postgres';
