@@ -6,7 +6,6 @@ require('dotenv').config();
 
 
 const app = express();
-// const port = 3000;
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
@@ -111,6 +110,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/register', async (req, res) => {
     const { name, email, password, confirm_password } = req.body;
+    console.log(name, email, password, confirm_password)
 
 try {
     if (name === undefined || email === undefined || password === undefined || confirm_password === undefined) {
